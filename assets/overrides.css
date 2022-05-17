@@ -122,14 +122,19 @@ button#Subscribe {
 
 .template-product .site-footer,
 #contact-us .site-footer,
-#account .site-footer,
 #your-shopping-cart .site-footer,
 #our-medical-ambassadors .site-footer,
 #our-story .site-footer,
 #faq .site-footer {
-  background: none !important;
+  /* background: none !important; */
   font-size: 16px;
   padding-bottom: 30px;
+}
+
+#account .site-footer,
+#create-account .site-footer,
+#your-shopping-cart .site-footer {
+  bottom: 0;
 }
 
 @media screen and (min-width: 768px) {
@@ -723,7 +728,9 @@ input#Quantity {
 }
 
 @media screen and (max-width: 767px) {
-  #contact-us .grid {
+  #contact-us .grid,
+  #account .grid,
+  #create-account .grid {
     margin: 0 !important;
   }
 }
