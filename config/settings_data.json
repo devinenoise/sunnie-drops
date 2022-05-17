@@ -199,11 +199,11 @@
       "product-template": {
         "type": "product-template",
         "settings": {
-          "product_first": "Natural Dry Eye Releief",
+          "product_first": "Dry Eye",
           "product_one_link": "shopify:\/\/products\/natural-dry-eye-relief",
-          "product_second": "Natural Redness releief",
+          "product_second": "Redness",
           "product_second_link": "shopify:\/\/products\/natural-redness-relief",
-          "product_third": "Natural digital Eye strain releief",
+          "product_third": "Digital Eye Strain",
           "product_third_link": "shopify:\/\/products\/natural-digital-eye-strain-relief",
           "product_vendor_enable": true,
           "social_sharing_products": true,
