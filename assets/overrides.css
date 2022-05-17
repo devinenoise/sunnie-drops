@@ -214,8 +214,9 @@ button#Subscribe {
   }
 }
 
-#the-healing-process h2 {
+#the-healing-process h1 {
   color: var(--purple);
+  font-size: 30px !important;
 }
 
 .multi-column--section-title {
