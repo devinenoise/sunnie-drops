@@ -33,14 +33,14 @@
           "logo": "shopify:\/\/shop_images\/sunnie-website-healingeye-3.png",
           "logo_max_width": 125,
           "header_color": "#000000",
-          "transparent_header_enable": true,
+          "transparent_header_enable": false,
           "transparent_header_color": "#ffffff",
-          "search": "modal",
+          "search": "none",
           "main_menu_link_list": "main-menu",
-          "drawer_bottom_link_list": "products-menus",
+          "drawer_bottom_link_list": "",
           "drawer_search_enable": false,
           "show_announcement": true,
-          "home_page_only": false,
+          "home_page_only": true,
           "text": "A SNEAK PEAK OF ALL NAUTURAL EYE DROPS",
           "link": "",
           "color_bg": "#cad9d9",
@@ -219,7 +219,7 @@
       "product-recommendations": {
         "type": "product-recommendations",
         "settings": {
-          "show_product_recommendations": true,
+          "show_product_recommendations": false,
           "heading": "You may also like"
         }
       },
