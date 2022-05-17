@@ -260,7 +260,13 @@ button#Subscribe {
 /* featured products */
 
 .grid-product__image-link {
-  padding: 50px 0;
+  padding: 25px 0;
+}
+
+@media screen and (min-width: 768px) {
+  .grid-product__image-link {
+    padding: 50px 0;
+  }
 }
 
 #pro_1 .btn {
@@ -343,6 +349,10 @@ button#Subscribe {
   #slick-slide01 {
     margin-top: 60px;
   }
+}
+
+.grid-product__meta {
+  padding: 0;
 }
 
 @media only screen and (min-width: 769px) {
@@ -482,6 +492,12 @@ input[type='number'] {
 
 .cart__image img {
   max-width: fit-content !important;
+}
+
+@media screen and (max-width: 767px) {
+  .cart__row .grid {
+    margin: 0;
+  }
 }
 
 .form__label {
