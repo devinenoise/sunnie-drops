@@ -39,7 +39,7 @@
 
 {% capture img_id_class %}ProductImage-{{ product.featured_media.id }}{% endcapture %}
 {% capture img_wrapper_id %}ProductImageWrapper-{{ product.featured_media.id }}{% endcapture %}
-{%- assign featured_image = product.featured_media.preview_image %}
+{%- assign featured_image = product.images[2] %}
 {%- assign img_url = featured_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
 
 <div id="pro_{{ forloop.index }}" class="grid__item grid-product {{ grid_item_width }}{% if sold_out %} is-sold-out{% endif %}">
@@ -52,7 +52,7 @@
           {% if on_sale %}
             <span class="visually-hidden">{{ 'products.general.sale_price' | t }}</span>
           {% else %}
-             <span class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
+            <span class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
           {% endif %}
           {% if product.price_varies %}
             {{ product.price_min | money_without_trailing_zeros }}

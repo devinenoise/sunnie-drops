@@ -39,7 +39,7 @@
             {% comment %}
               Display product images
             {% endcomment %}
-            {%- for media in product.media -%}
+            {%- for media in product.media limit:2 -%}
               {%- assign featured = false -%}
               {%- if media == featured_media -%}
                 {%- assign featured = true -%}
