@@ -490,8 +490,18 @@ input[type='number'] {
   gap: 5px !important;
 }
 
+#your-shopping-cart .main-content {
+  padding: 0 15px;
+}
+
 .cart__image img {
   max-width: fit-content !important;
+}
+
+@media screen and (max-width: 767px) {
+  .additional_checkout_buttons {
+    padding: 0 15px;
+  }
 }
 
 @media screen and (max-width: 767px) {
