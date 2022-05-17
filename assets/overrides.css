@@ -92,6 +92,10 @@ button#Subscribe {
   }
 }
 
+.grid__item-image-block {
+  max-width: 210px;
+}
+
 .multicolumn-section h2 {
   color: #cbb9d5;
 }
