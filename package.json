@@ -1,0 +1,21 @@
+{
+  "name": "sunnie-drops",
+  "version": "1.0.0",
+  "description": "Custom Shopify Site for Sunnie Drops",
+  "main": "index.js",
+  "scripts": {
+    "login": "shopify login --store=sunnie-natural.myshopify.com",
+    "start": "npm run login && shopify theme serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devinenoise/sunnie-drops.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devinenoise/sunnie-drops/issues"
+  },
+  "homepage": "https://github.com/devinenoise/sunnie-drops#readme"
+}
