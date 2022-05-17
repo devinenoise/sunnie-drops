@@ -132,7 +132,11 @@
 }
 
 #pro_2 .btn {
-  background-color: #e46e5b;
+  background-color: #f4c6b8;
+}
+
+#pro_2 .grid-product__title {
+  color: #f4c6b8 !important;
 }
 
 #pro_3 span.grid-product__title,
