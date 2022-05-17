@@ -251,7 +251,7 @@
               "enable_image": true,
               "image": "shopify:\/\/shop_images\/sunnie-website-healingeye-1.png",
               "title": "STEP 1",
-              "text": "<p>Tilt your head back while looking into the blue dot<\/p>\n🔵\n<p>Treat the affected eye(s)<\/p>"
+              "text": "<p>Tilt your head back while looking into the blue dot<\/p>\n<div class=\"dot\"><\/div>\n<br>\n<br>\n<p>Treat the affected eye(s)<\/p>"
             }
           },
           "1652769354c892b5d3-1": {
