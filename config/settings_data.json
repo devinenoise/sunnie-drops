@@ -260,7 +260,8 @@
           "c9507910-f346-425f-9ac5-1d5af7241012"
         ],
         "settings": {
-          "title": ""
+          "title": "",
+          "text_align": "center"
         }
       },
       "password-header": {
@@ -322,12 +323,23 @@
           "title": "The Healing Process",
           "text_align": "center"
         }
+      },
+      "1652773299e1e8fe87": {
+        "type": "featured-row",
+        "settings": {
+          "layout": "left",
+          "title": "Image with text",
+          "text": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+          "button_label": "",
+          "button_link": ""
+        }
       }
     },
     "content_for_index": [
       "featured-products",
       "1652769354c892b5d3",
-      "newsletter"
+      "newsletter",
+      "1652773299e1e8fe87"
     ]
   },
   "presets": {
