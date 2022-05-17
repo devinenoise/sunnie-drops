@@ -30,7 +30,7 @@
       "header": {
         "type": "header",
         "settings": {
-          "logo": "shopify://shop_images/sunnie-website-healingeye-3.png",
+          "logo": "shopify:\/\/shop_images\/sunnie-website-healingeye-3.png",
           "logo_max_width": 125,
           "header_color": "#000000",
           "transparent_header_enable": true,
@@ -84,7 +84,10 @@
             }
           }
         },
-        "block_order": ["slideshow-0", "slideshow-1"],
+        "block_order": [
+          "slideshow-0",
+          "slideshow-1"
+        ],
         "settings": {
           "home_hero_height": "full",
           "hero_home_auto": false,
@@ -97,7 +100,7 @@
         "settings": {
           "home_page_full_width": false,
           "section_title": "",
-          "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+          "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
           "text_size": "large"
         }
       },
@@ -177,7 +180,7 @@
       "footer": {
         "type": "footer",
         "settings": {
-          "show_payment_icons": true,
+          "show_payment_icons": false,
           "show_locale_selector": false,
           "show_currency_selector": false,
           "footer_link_list": "footer"
@@ -197,11 +200,11 @@
         "type": "product-template",
         "settings": {
           "product_first": "Dry Eye",
-          "product_one_link": "shopify://products/natural-dry-eye-relief",
+          "product_one_link": "shopify:\/\/products\/natural-dry-eye-relief",
           "product_second": "Redness",
-          "product_second_link": "shopify://products/natural-redness-relief",
+          "product_second_link": "shopify:\/\/products\/natural-redness-relief",
           "product_third": "Digital Eye Strain",
-          "product_third_link": "shopify://products/natural-digital-eye-strain-relief",
+          "product_third_link": "shopify:\/\/products\/natural-digital-eye-strain-relief",
           "product_vendor_enable": true,
           "social_sharing_products": true,
           "quantity_enabled": false,
@@ -246,27 +249,27 @@
             "type": "text_block",
             "settings": {
               "enable_image": true,
-              "image": "shopify://shop_images/sunnie-website-healingeye-1.png",
+              "image": "shopify:\/\/shop_images\/sunnie-website-healingeye-1.png",
               "title": "STEP 1",
-              "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.</p>"
+              "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>"
             }
           },
           "1652769354c892b5d3-1": {
             "type": "text_block",
             "settings": {
               "enable_image": true,
-              "image": "shopify://shop_images/sunnie-website-healingeye-2.png",
+              "image": "shopify:\/\/shop_images\/sunnie-website-healingeye-2.png",
               "title": "STEP 2",
-              "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.</p>"
+              "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>"
             }
           },
           "1652769354c892b5d3-2": {
             "type": "text_block",
             "settings": {
               "enable_image": true,
-              "image": "shopify://shop_images/sunnie-website-healingeye-3.png",
+              "image": "shopify:\/\/shop_images\/sunnie-website-healingeye-3.png",
               "title": "STEP 3",
-              "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.</p>"
+              "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>"
             }
           }
         },
@@ -280,8 +283,8 @@
           "text_align": "center"
         }
       },
-      "1652773299e1e8fe87": {
-        "type": "featured-row",
+      "image-with-text": {
+        "type": "image-with-text",
         "settings": {
           "layout": "left",
           "title": "Image with text",
@@ -294,8 +297,7 @@
     "content_for_index": [
       "featured-products",
       "1652769354c892b5d3",
-      "newsletter",
-      "1652773299e1e8fe87"
+      "newsletter"
     ]
   },
   "presets": {
@@ -315,15 +317,21 @@
           "blocks": {
             "slideshow-0": {
               "type": "slide",
-              "settings": {}
+              "settings": {
+              }
             },
             "slideshow-1": {
               "type": "slide",
-              "settings": {}
+              "settings": {
+              }
             }
           },
-          "block_order": ["slideshow-0", "slideshow-1"],
-          "settings": {}
+          "block_order": [
+            "slideshow-0",
+            "slideshow-1"
+          ],
+          "settings": {
+          }
         },
         "featured-content": {
           "type": "featured-content",
@@ -337,23 +345,28 @@
           "blocks": {
             "featured-collections-0": {
               "type": "collection",
-              "settings": {}
+              "settings": {
+              }
             },
             "featured-collections-1": {
               "type": "collection",
-              "settings": {}
+              "settings": {
+              }
             },
             "featured-collections-2": {
               "type": "collection",
-              "settings": {}
+              "settings": {
+              }
             },
             "featured-collections-3": {
               "type": "collection",
-              "settings": {}
+              "settings": {
+              }
             },
             "featured-collections-4": {
               "type": "collection",
-              "settings": {}
+              "settings": {
+              }
             }
           },
           "block_order": [
@@ -363,7 +376,8 @@
             "featured-collections-3",
             "featured-collections-4"
           ],
-          "settings": {}
+          "settings": {
+          }
         },
         "featured-products": {
           "type": "featured-products",
@@ -373,11 +387,13 @@
         },
         "featured-product": {
           "type": "featured-product",
-          "settings": {}
+          "settings": {
+          }
         },
         "newsletter": {
           "type": "newsletter",
-          "settings": {}
+          "settings": {
+          }
         }
       },
       "content_for_index": [
@@ -467,7 +483,9 @@
               }
             }
           },
-          "block_order": ["1495823280244"],
+          "block_order": [
+            "1495823280244"
+          ],
           "settings": {
             "hero_home_auto": false,
             "home_hero_auto_speed": 5
@@ -482,7 +500,8 @@
         },
         "newsletter": {
           "type": "newsletter",
-          "settings": {}
+          "settings": {
+          }
         },
         "header": {
           "type": "header",
@@ -509,18 +528,6 @@
             "product_vendor_enable": false
           }
         },
-        "1494860348200": {
-          "type": "featured-row",
-          "settings": {
-            "layout": "right"
-          }
-        },
-        "1494894035034": {
-          "type": "featured-row",
-          "settings": {
-            "layout": "left"
-          }
-        },
         "product-template": {
           "type": "product-template",
           "settings": {
@@ -536,14 +543,17 @@
             "1496078102297-0": {
               "type": "html",
               "settings": {
-                "code": "<div style=\"text-align:center;\">\n<h1 class=\"h1\">Use HTML to format your text so it can be easily read.</h1>This text can be used to share information about your brand with customers.</div>",
+                "code": "<div style=\"text-align:center;\">\n<h1 class=\"h1\">Use HTML to format your text so it can be easily read.<\/h1>This text can be used to share information about your brand with customers.<\/div>",
                 "width": "100%",
                 "alignment": "top-middle"
               }
             }
           },
-          "block_order": ["1496078102297-0"],
-          "settings": {}
+          "block_order": [
+            "1496078102297-0"
+          ],
+          "settings": {
+          }
         },
         "1496177901425": {
           "type": "advanced-content",
@@ -551,14 +561,17 @@
             "1496177901425-0": {
               "type": "html",
               "settings": {
-                "code": "<div style=\"width:745px;text-align: center; margin: 0 auto;\">This text can be used to share information about your brand with customers.</div>",
+                "code": "<div style=\"width:745px;text-align: center; margin: 0 auto;\">This text can be used to share information about your brand with customers.<\/div>",
                 "width": "100%",
                 "alignment": "top-middle"
               }
             }
           },
-          "block_order": ["1496177901425-0"],
-          "settings": {}
+          "block_order": [
+            "1496177901425-0"
+          ],
+          "settings": {
+          }
         }
       },
       "content_for_index": [
@@ -566,9 +579,7 @@
         "1496177901425",
         "featured-products",
         "newsletter",
-        "1496078102297",
-        "1494860348200",
-        "1494894035034"
+        "1496078102297"
       ]
     }
   }
