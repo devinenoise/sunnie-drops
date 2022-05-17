@@ -1,0 +1,160 @@
+<div class="page-width">
+  {% if section.settings.title != blank %}
+    <div class="section-header text-center">
+      <h2>{{ section.settings.title | escape }}</h2>
+    </div>
+  {% endif %}
+
+  <div class="multi-column--flex wrapper">
+
+    {% for block in section.blocks %}
+      <div id="sec-{{ forloop.index }}" class="grid__item-image-block{% if section.settings.text_align == "center" %} text-center{% endif %}" {{ block.shopify_attributes }}>
+      <div class="multi-column--section-title">
+        {% if block.settings.title != blank %}
+          <h3 class="h4">{{ block.settings.title | escape }}</h3>
+        {% endif %}
+      </div>
+        {% if block.settings.enable_image %}
+          {% if block.settings.image != blank %}
+              <div class="multi-column--image-container">
+                <img
+                  srcset="{%- if block.settings.image.width >= 275 -%}{{ block.settings.image | image_url: width: 275 }} 275w,{%- endif -%}
+                    {%- if block.settings.image.width >= 550 -%}{{ block.settings.image | image_url: width: 550 }} 550w,{%- endif -%}
+                    {%- if block.settings.image.width >= 710 -%}{{ block.settings.image | image_url: width: 710 }} 710w,{%- endif -%}
+                    {%- if block.settings.image.width >= 1420 -%}{{ block.settings.image | image_url: width: 1420 }} 1420w,{%- endif -%}
+                    {{ block.settings.image | image_url }} {{ block.settings.image.width }}w"
+                  src="{{ block.settings.image | image_url: width: 550 }}"
+                  sizes="(min-width: 990px) {% if section.blocks.size <= 2 %}710px{% else %}550px{% endif %},
+                    (min-width: 750px) {% if section.blocks.size == 1 %}710px{% else %}550px{% endif %},
+                    calc(100vw - 30px)"
+                  alt="{{ block.settings.image.alt }}"
+                  height="{{ block.settings.image.height }}"
+                  width="{{ block.settings.image.width }}"
+                  loading="lazy"
+                    >
+              </div>
+          {% else %}
+              {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          {% endif %}
+        {% endif %}
+
+        {% if block.settings.text != blank %}
+          <div class="multi-column--rte">
+            {{ block.settings.text }}
+          </div>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+
+{% schema %}
+{
+  "name": {
+    "en": "Text columns with images"
+  },
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": {
+        "en": "Heading"
+      },
+      "default": {
+        "en": "Text columns with images"
+      }
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": {
+        "en": "Text alignment"
+      },
+      "default": "center",
+      "options": [
+        {
+          "value": "left",
+          "label": {
+            "en": "Left"
+          }
+        },
+        {
+          "value": "center",
+          "label": {
+            "en": "Centered"
+          }
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text_block",
+      "name": {
+        "en": "Column"
+      },
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "enable_image",
+          "label": {
+            "en": "Show image"
+          },
+          "default": true
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": {
+            "en": "Image"
+          }
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": {
+            "en": "Heading"
+          },
+          "default": {
+            "en": "Add a title or tagline"
+          }
+        },
+        {
+          "type": "html",
+          "id": "text",
+          "label": {
+            "en": "Text"
+          },
+          "default": {
+            "en": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.</p>"
+          }
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "en": "Text columns with images"
+      },
+      "category": {
+        "en": "Text"
+      },
+      "blocks": [
+        {
+          "type": "text_block"
+        },
+        {
+          "type": "text_block"
+        },
+        {
+          "type": "text_block"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
