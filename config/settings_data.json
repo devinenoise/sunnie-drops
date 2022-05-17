@@ -1,6 +1,6 @@
 {
   "current": {
-    "color_body_bg": "#F6EFE3",
+    "color_body_bg": "#ffffff",
     "color_headings": "#0f6b61",
     "color_body_text": "#0f6b61",
     "color_borders": "#0f6b61",
@@ -8,7 +8,7 @@
     "color_secondary": "#0f6b61",
     "color_sale_tag": "#0f6b61",
     "color_newsletter": "#f4e8d4",
-    "color_drawer_background": "#f6efe3",
+    "color_drawer_background": "#ffffff",
     "color_drawer_text": "#0f6b61",
     "color_drawer_border": "#0f6b61",
     "color_drawer_button": "#0f6b61",

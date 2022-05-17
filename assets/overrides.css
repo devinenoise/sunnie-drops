@@ -3,6 +3,7 @@
   --red: #e8b3a3;
   --gold: #dec253;
   --off-white: #fef8ec;
+  --white: #ffffff;
   --khaki: #f6efe3;
   --gray: #575757;
   --light-blue: #cad9d9;
@@ -63,7 +64,7 @@ body#faq span {
 }
 
 .drawer {
-  background-color: var(--khaki);
+  background-color: var(--white);
 }
 
 @media screen and (min-width: 768px) {
@@ -174,6 +175,7 @@ button#Subscribe {
 #our-story p {
   text-transform: uppercase;
   font-size: 22px !important;
+  text-align: center;
 }
 
 #our-story h1,
@@ -297,7 +299,7 @@ button#Subscribe {
 }
 
 #sunnie-natural .newsletter__input {
-  background-color: var(--off-white);
+  background-color: var(--khaki);
 }
 
 .newsletter__input::placeholder {
@@ -330,7 +332,7 @@ button#Subscribe {
 }
 
 .template-product footer {
-  background-color: var(--khaki) !important;
+  background-color: var(--white) !important;
 }
 
 @media screen and (min-width: 768px) {
@@ -718,4 +720,8 @@ input#Quantity {
 #contact-us .btn.right {
   margin-top: 20px;
   background-color: var(--light-blue);
+}
+
+#contact-us .grid--small .grid__item {
+  padding-left: 0 !important;
 }
