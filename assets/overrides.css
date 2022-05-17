@@ -23,10 +23,6 @@
   text-align: center;
 }
 
-.wrapper {
-  max-width: 1200px !important;
-}
-
 /* multicolumn section */
 .multi-column--flex {
   display: flex;
@@ -68,7 +64,7 @@
   background-color: transparent;
 }
 
-.newsletter__input {
+#sunnie-natural .newsletter__input {
   background-color: #fef8ec;
 }
 
@@ -89,4 +85,25 @@
 
 #our-story .newsletter {
   display: none;
+}
+
+.template-product footer {
+  background-color: #f6efe3 !important;
+}
+
+@media screen and (min-width: 768px) {
+  .product-single__media-group {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 100px;
+  }
+  .template-product .grid__item {
+    padding-left: 130px;
+  }
+  .product-single__meta--wrapper {
+    padding-left: 145px;
+  }
+  #slick-slide01 {
+    margin-top: 60px;
+  }
 }
