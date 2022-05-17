@@ -191,8 +191,8 @@ button#Subscribe {
   font-size: 30px;
 }
 
-#our-story p.off-white {
-  color: #e8e8df !important;
+#our-story p.sky-blue {
+  color: var(--sky-blue) !important;
 }
 
 /* multicolumn section */
