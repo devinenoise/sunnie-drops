@@ -79,6 +79,23 @@ button#Subscribe {
   display: inline-block;
 }
 
+#our-story {
+  height: 100vh;
+}
+
+#our-story p {
+  text-transform: uppercase;
+  font-size: 22px !important;
+}
+
+#our-story h1 {
+  font-size: 30px;
+}
+
+#our-story p.off-white {
+  color: #e8e8df !important;
+}
+
 /* multicolumn section */
 .multi-column--flex {
   display: flex;
