@@ -81,7 +81,8 @@ body#faq span:not(.icon) {
   color: var(--green) !important;
 }
 
-.icon-cart {
+.icon-cart,
+.icon-customer {
   font-size: 22px !important;
 }
 
