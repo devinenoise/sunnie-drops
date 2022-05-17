@@ -98,16 +98,10 @@
     </div>
   </div>
 
-  <div id="PageContainer" class="page-container">
+  <div id="PageContainer" class="page-container wrapper">
     <main class="main-content" role="main">
-      {% unless request.page_type == "index" %}
-        <div class="wrapper">
-      {% endunless %}
         {{ content_for_layout }}
-      {% unless request.page_type == "index" %}
-        </div>
-      {% endunless %}
-    </main>
+     </main>
 
     {% section 'footer' %}
 

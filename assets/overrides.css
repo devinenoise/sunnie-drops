@@ -154,23 +154,25 @@
   }
 }
 
-.outerlinks {
-  display: flex;
-  justify-content: space-between;
-  float: unset;
-  text-align: unset;
-}
+@media screen and (min-width: 768px) {
+  .outerlinks {
+    display: flex;
+    justify-content: space-between;
+    float: unset;
+    text-align: unset;
+  }
 
-.firstlink {
-  text-align: left;
-}
+  .firstlink {
+    text-align: left;
+  }
 
-.secondlink {
-  text-align: center;
-}
+  .secondlink {
+    text-align: center;
+  }
 
-.thirdlink {
-  text-align: right;
+  .thirdlink {
+    text-align: right;
+  }
 }
 
 #our-medical-ambassadors h1 {
