@@ -4,18 +4,23 @@ html {
   border: 0;
 }
 
-body,
-body#our-story,
-body#dry-eye,
-body#redness,
-body#digital-eye-strain {
-  height: 100vh !important;
-  display: flex !important;
-  flex-direction: column !important;
-}
+@media screen and (min-width: 768px) {
+  .template-product .page-container.wrapper {
+    width: 1200px !important;
+  }
+  .page-container {
+    height: 100% !important;
+  }
 
-.page-container {
-  height: 100% !important;
+  body,
+  body#our-story,
+  body#dry-eye,
+  body#redness,
+  body#digital-eye-strain {
+    height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
 }
 
 .announcement-bar {
@@ -82,10 +87,20 @@ button#Subscribe {
 #our-medical-ambassadors .site-footer,
 #our-story .site-footer,
 #faq .site-footer {
-  bottom: 0;
   background: none !important;
   font-size: 16px;
   padding-bottom: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .template-product .site-footer,
+  #contact-us .site-footer,
+  #account .site-footer,
+  #your-shopping-cart .site-footer,
+  #our-medical-ambassadors .site-footer,
+  #our-story .site-footer,
+  #faq .site-footer {
+    bottom: 0;
 }
 
 .payment-icons {
