@@ -39,7 +39,7 @@ html {
 }
 
 body#faq {
-  background-color: var(--light-blue);
+  background-color: var(--white);
 }
 
 body#faq h1 {
@@ -120,13 +120,12 @@ button#Subscribe {
   font-weight: 500 !important;
 }
 
-.template-product .site-footer,
 #contact-us .site-footer,
 #your-shopping-cart .site-footer,
 #our-medical-ambassadors .site-footer,
 #our-story .site-footer,
 #faq .site-footer {
-  /* background: none !important; */
+  background: var(--white) !important;
   font-size: 16px;
   padding-bottom: 30px;
 }
@@ -325,7 +324,7 @@ button#Subscribe {
 
 #our-story,
 #our-story footer {
-  background-color: var(--light-blue);
+  background-color: var(--white);
 }
 
 #our-story p {
