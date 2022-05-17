@@ -116,6 +116,10 @@ button#Subscribe {
   right: 0;
 }
 
+.custom_footer ul li {
+  font-weight: 500 !important;
+}
+
 .template-product .site-footer,
 #contact-us .site-footer,
 #account .site-footer,
@@ -299,7 +303,7 @@ button#Subscribe {
 }
 
 #sunnie-natural .newsletter__input {
-  background-color: var(--khaki);
+  background-color: var(--off-white);
 }
 
 .newsletter__input::placeholder {
@@ -441,6 +445,13 @@ button#Subscribe {
   .varint_cu {
     margin-bottom: 50px !important;
   }
+}
+
+/* buttons */
+
+.btn,
+.btn--secondary {
+  letter-spacing: 3.2px !important;
 }
 
 /* component-quantity */
