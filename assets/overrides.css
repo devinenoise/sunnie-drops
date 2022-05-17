@@ -222,12 +222,17 @@ button#Subscribe {
   }
 }
 
+.outerlinks {
+  margin-bottom: 60px;
+}
+
 @media screen and (min-width: 768px) {
   .outerlinks {
     display: flex;
     justify-content: space-between;
     float: unset;
     text-align: unset;
+    margin-bottom: 40px;
   }
 
   .firstlink {
@@ -466,6 +471,14 @@ input#Quantity {
 .cart-price,
 .update-cart {
   font-family: 'Gotham Rounded';
+}
+
+.update-cart {
+  background: #cad9d9;
+}
+
+.cart__checkout {
+  background: #e46e5b;
 }
 
 .input-full::placeholder {
