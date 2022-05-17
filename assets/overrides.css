@@ -472,9 +472,11 @@ input#Quantity {
   min-width: 175px;
 }
 
-.cart-price,
-.update-cart {
-  font-family: 'Gotham Rounded';
+.cart__price,
+.cart__subtotal,
+.update-cart,
+#HideRecoverPasswordLink {
+  font-family: 'Gotham Rounded' !important;
 }
 
 .update-cart {
@@ -487,5 +489,9 @@ input#Quantity {
 
 .input-full::placeholder {
   text-align: left !important;
+  font-family: 'Gotham Rounded';
+}
+
+.grid--full {
   font-family: 'Gotham Rounded';
 }
