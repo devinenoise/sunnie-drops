@@ -16,6 +16,26 @@
   padding: 30px 0;
 }
 
+.icon-customer {
+  color: #106b61;
+}
+
+.icon-cart {
+  font-size: 22px !important;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.icon-customer,
+.icon-cart {
+  height: 25px;
+  width: 25px;
+}
+
 /* footer */
 .payment-icons {
   display: none;
@@ -376,12 +396,17 @@ input#Quantity {
   -moz-appearance: textfield;
 }
 
-/* product page */
+/* cart page */
 .btn--add-to-cart {
   min-width: 175px;
 }
 
 .cart-price,
 .update-cart {
+  font-family: 'Gotham Rounded';
+}
+
+.input-full::placeholder {
+  text-align: left !important;
   font-family: 'Gotham Rounded';
 }
