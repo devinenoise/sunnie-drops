@@ -249,6 +249,16 @@ button#Subscribe {
   background-color: #fef8ec;
 }
 
+.newsletter__input::placeholder {
+  font-size: 12px !important;
+}
+
+@media screen and (min-width: 768px) {
+  .newsletter__input::placeholder {
+    font-size: 16px !important;
+  }
+}
+
 /* Our Story page */
 
 #our-story,
