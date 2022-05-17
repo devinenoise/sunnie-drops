@@ -302,7 +302,7 @@ button#Subscribe {
   .product-single__media-group {
     display: flex;
     flex-direction: row-reverse;
-    gap: 100px;
+    gap: 78px;
   }
   template-product .grid__item {
     padding-left: 130px;
@@ -390,6 +390,12 @@ button#Subscribe {
 
 #our-medical-ambassadors h1 {
   color: #0f6b61 !important;
+}
+
+@media screen and (min-width: 768px) {
+  .product-single__media-flex-wrapper:nth-of-type(2) {
+    margin-top: 40px;
+  }
 }
 
 /* component-quantity */
