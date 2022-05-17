@@ -48,7 +48,7 @@
                         More image size options at:
                           - http://docs.shopify.com/themes/filters/product-img-url
                       {% endcomment %}
-                      <img src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}">
+                      <img src="{{ item | img_url: "medium" }}" alt="{{ item.title | escape }}">
                     </a>
                   </div>
 
@@ -103,8 +103,23 @@
 
                   <div class="grid__item one-third text-center">
 
-                    <label for="updates_{{ item.key }}" class="visually-hidden">{{ 'cart.label.quantity' | t }}</label>
-                    <input type="number" name="updates[]" id="updates_{{ item.key }}" class="cart__product-qty" value="{{ item.quantity }}" min="0" data-id="{{ item.key }}">
+                    {% comment %} <label for="updates_{{ item.key }}" class="visually-hidden">{{ 'cart.label.quantity' | t }}</label>
+                    <input type="number" name="updates[]" id="updates_{{ item.key }}" class="cart__product-qty" value="{{ item.quantity }}" min="0" data-id="{{ item.key }}"> {% endcomment %}
+                  <div class="product-form__input product-form__quantity" {{ block.shopify_attributes }}>
+                  <label for="updates_{{ item.key }}" class="form__label"></label>
+
+                  <quantity-input class="quantity">
+                    <button class="quantity__button no-js-hidden" name="minus" type="button">
+                      <span class="visually-hidden">Decrease</span>
+                      {% render 'icon-minus' %}
+                    </button>
+                    <input type="number" name="updates[]" id="updates_{{ item.key }}" class=quantity__input" value="{{ item.quantity }}" min="0" data-id="{{ item.key }}">
+                    <button class="quantity__button no-js-hidden" name="plus" type="button">
+                      <span class="visually-hidden">Increase</span>
+                      {% render 'icon-plus' %}
+                    </button>
+                  </quantity-input>
+                  </div>
 
                   </div>
 
@@ -226,7 +241,7 @@
         <h1 class="text-center">{{ 'cart.general.title' | t }}</h1>
         <hr class="hr--small">
         <p class="cart--empty-message">{{ 'cart.general.empty' | t }}</p>
-        <p class="cart--continue-browsing">{{ 'cart.general.continue_browsing_html' | t: link: routes.all_products_collection_url }}</p>
+        <p class="cart--continue-browsing">{{ 'cart.general.continue_browsing_html' | t: link: routes.root_url }}</p>
         <p class="cookie-message">{{ 'cart.general.cookies_required' | t }}</p>
       </header>
 

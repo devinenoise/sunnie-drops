@@ -11,7 +11,7 @@
       <div id="sec-{{ forloop.index }}" class="grid__item-image-block{% if section.settings.text_align == "center" %} text-center{% endif %}" {{ block.shopify_attributes }}>
       <div class="multi-column--section-title">
         {% if block.settings.title != blank %}
-          <h3 class="h4">{{ block.settings.title | escape }}</h3>
+          <h3>{{ block.settings.title | escape }}</h3>
         {% endif %}
       </div>
         {% if block.settings.enable_image %}
@@ -55,7 +55,7 @@
   "name": {
     "en": "Text columns with images"
   },
-  "class": "index-section",
+  "class": "index-section multicolumn-section",
   "settings": [
     {
       "type": "text",
