@@ -219,7 +219,7 @@
       "product-recommendations": {
         "type": "product-recommendations",
         "settings": {
-          "show_product_recommendations": true,
+          "show_product_recommendations": false,
           "heading": "You may also like"
         }
       },
