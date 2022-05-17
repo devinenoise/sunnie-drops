@@ -3,7 +3,7 @@
   --red: #e8b3a3;
   --gold: #eec451;
   --off-white: #fef8ec;
-  --khaki: #f6efe3
+  --khaki: #f6efe3;
   --gray: #575757;
   --light-blue: #cad9d9;
   --sky-blue: #74b9cf;
@@ -37,12 +37,33 @@ html {
   }
 }
 
+body#faq {
+  background-color: var(--light-blue);
+}
+
+body#faq h1 {
+  font-size: 30px !important;
+  color: var(--sky-blue) !important;
+}
+
+body#faq p {
+  color: var(--gray) !important;
+}
+
+body#faq span {
+  color: var(--sky-blue) !important;
+}
+
 .announcement-bar {
   margin-left: auto;
   margin-right: auto;
   left: 0;
   right: 0;
   text-align: center;
+}
+
+.drawer {
+  background-color: var(--khaki);
 }
 
 @media screen and (min-width: 768px) {
@@ -56,7 +77,7 @@ html {
 }
 
 .icon-customer {
-  color: #106b61;
+  color: var(--green);
 }
 
 .icon-cart {
@@ -64,7 +85,7 @@ html {
 }
 
 .cart-link__bubble--visible {
-  background-color: #cad9d9;
+  background-color: var(--light-blue);
 }
 
 .site-nav {
@@ -80,7 +101,7 @@ html {
 }
 
 button#Subscribe {
-  background: #cad9d9;
+  background: var(--light-blue);
 }
 
 /* footer */
@@ -110,7 +131,6 @@ button#Subscribe {
   .template-product .site-footer,
   #contact-us .site-footer,
   #account .site-footer,
-  #your-shopping-cart .site-footer,
   #our-medical-ambassadors .site-footer,
   #our-story .site-footer,
   #faq .site-footer {
@@ -123,8 +143,7 @@ button#Subscribe {
 }
 
 .site-footer a:hover {
-  color: #106b61;
-  text-decoration: underline;
+  color: var(--gold);
 }
 
 /* utility class*/
@@ -186,7 +205,7 @@ button#Subscribe {
 }
 
 .multicolumn-section h2 {
-  color: #cbb9d5;
+  color: var(--purple);
 }
 
 .multi-column--section-title {
@@ -195,7 +214,7 @@ button#Subscribe {
 
 .multi-column--section-title h3 {
   font-family: 'Gotham Rounded' !important;
-  color: #575757 !important;
+  color: var(--gray) !important;
 }
 
 @media screen and (min-width: 768px) {
@@ -235,7 +254,7 @@ button#Subscribe {
 .multi-column--rte {
   margin-top: 170px;
   text-transform: uppercase;
-  color: #575757;
+  color: var(--gray);
 }
 
 /* featured products */
@@ -245,24 +264,24 @@ button#Subscribe {
 }
 
 #pro_1 .btn {
-  background-color: #cad9d9;
+  background-color: var(--light-blue) !important;
 }
 
 #pro_2 .btn {
-  background-color: #f4c6b8;
+  background-color: var(--red);
 }
 
 #pro_2 .grid-product__title {
-  color: #f4c6b8 !important;
+  color: var(--red) !important;
 }
 
 #pro_3 span.grid-product__title,
 .firstlink.commonwidth a {
-  color: #e7dbc7 !important;
+  color: var(--brown) !important;
 }
 
 #pro_3 .btn {
-  background-color: #e7dbc7;
+  background-color: var(--brown);
 }
 
 /* newsletter */
@@ -272,7 +291,7 @@ button#Subscribe {
 }
 
 #sunnie-natural .newsletter__input {
-  background-color: #fef8ec;
+  background-color: var(--off-white);
 }
 
 .newsletter__input::placeholder {
@@ -289,11 +308,11 @@ button#Subscribe {
 
 #our-story,
 #our-story footer {
-  background-color: #cad9d9;
+  background-color: var(--light-blue);
 }
 
 #our-story p {
-  color: #575757 !important;
+  color: var(--gray) !important;
 }
 
 #our-story .section-header {
@@ -305,7 +324,7 @@ button#Subscribe {
 }
 
 .template-product footer {
-  background-color: #f6efe3 !important;
+  background-color: var(--khaki) !important;
 }
 
 @media screen and (min-width: 768px) {
@@ -366,28 +385,28 @@ button#Subscribe {
 
 .thirdlink a,
 #digital-eye-strain .product-single__title {
-  color: #cad9d9 !important;
+  color: var(--light-blue) !important;
 }
 
 #digital-eye-strain .btn--add-to-cart {
-  background: #cad9d9;
+  background: var(--light-blue);
 }
 
 .secondlink a,
 #redness .product-single__title {
-  color: #f4c6b8 !important;
+  color: var(--red) !important;
 }
 #redness .btn--add-to-cart {
-  background: #f4c6b8 !important;
+  background: var(--red) !important;
 }
 
 .firstlink a,
 #dry-eye .product-single__title {
-  color: #e7dbc7 !important;
+  color: var(--brown) !important;
 }
 
 #dry-eye .btn--add-to-cart {
-  background: #e7dbc7 !important;
+  background: var(--brown) !important;
 }
 
 .product-single__title {
@@ -396,7 +415,7 @@ button#Subscribe {
 }
 
 #dry-eye h1.product-single__title {
-  color: #e7dbc7 !important;
+  color: var(--brown) !important;
 }
 
 #our-medical-ambassadors h1 {
@@ -419,17 +438,17 @@ button#Subscribe {
   gap: 25px;
   max-width: 175px;
   align-items: center;
-  border: 2px solid #cad9d9;
+  border: 2px solid var(--light-blue);
   font-family: 'Gotham Rounded';
   justify-content: center;
 }
 
 #redness .product-form__quantity {
-  border: 2px solid #f4c6b8 !important;
+  border: 2px solid var(--red) !important;
 }
 
 #dry-eye .product-form__quantity {
-  border: 2px solid #e7dbc7 !important;
+  border: 2px solid var(--brown) !important;
 }
 
 input[type='number'] {
@@ -601,7 +620,7 @@ input#Quantity {
 }
 
 .update-cart {
-  background: #cad9d9;
+  background: var(--light-blue);
 }
 
 .cart__checkout {
@@ -653,15 +672,17 @@ input#Quantity {
 .featured-row__subtext p,
 #our-medical-ambassadors div {
   font-family: 'Gotham Rounded' !important;
-  color: #575757;
+  color: var(--gray);
 }
 
 .featured-row__subtext p {
   font-size: 20px !important;
 }
 
-#contact-us .grid {
-  margin: 0 !important;
+@media screen and (max-width: 767px) {
+  #contact-us .grid {
+    margin: 0 !important;
+  }
 }
 
 #contact-us .btn.right {
