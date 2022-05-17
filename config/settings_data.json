@@ -207,7 +207,7 @@
           "product_third_link": "shopify:\/\/products\/natural-digital-eye-strain-relief",
           "product_vendor_enable": true,
           "social_sharing_products": true,
-          "quantity_enabled": false,
+          "quantity_enabled": true,
           "product_selector": "radio",
           "enable_payment_button": false,
           "add_to_cart_button_size": "small",
