@@ -65,7 +65,7 @@
       -o-#{$property}: $value;
     } @else if $prefix == spec {
       #{$property}: $value;
-    } @else  {
+    } @else {
       @warn 'Unrecognized prefix: #{$prefix}';
     }
   }
@@ -96,15 +96,21 @@
 
 @mixin animation($animation) {
   -webkit-animation: $animation;
-  -moz-animation:    $animation;
-  -o-animation:      $animation;
-  animation:         $animation;
+  -moz-animation: $animation;
+  -o-animation: $animation;
+  animation: $animation;
 }
 
 @mixin gradient($from, $to, $fallback) {
   background: $fallback;
   background: -moz-linear-gradient(top, $from 0%, $to 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$from), color-stop(100%,$to));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0%, $from),
+    color-stop(100%, $to)
+  );
   background: -webkit-linear-gradient(top, $from 0%, $to 100%);
   background: -o-linear-gradient(top, $from 0%, $to 100%);
   background: -ms-linear-gradient(top, $from 0%, $to 100%);
@@ -130,19 +136,17 @@
 }
 
 @function color-control($color) {
-  @if (lightness( $color ) > 40) {
+  @if (lightness($color) > 40) {
     @return #1c1d1d;
-  }
-  @else {
+  } @else {
     @return #fff;
   }
 }
 
 @function adaptive-color($color, $percentage) {
-  @if (lightness( $color ) > 40) {
+  @if (lightness($color) > 40) {
     @return darken($color, $percentage);
-  }
-  @else {
+  } @else {
     @return lighten($color, $percentage);
   }
 }
@@ -162,16 +166,13 @@
   font-family: $accentFontStack;
   font-weight: $accentFontWeight;
   font-style: $accentFontStyle;
-  
-    letter-spacing: 0.1em;
-  
-  
-    text-transform: uppercase;
-  
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
 }
 
 @mixin bodyFontItalic {
-  
 }
 
 @mixin visuallyHidden {
@@ -195,7 +196,8 @@
 }
 
 @include keyframes(fadeIn) {
-  0%, 35% {
+  0%,
+  35% {
     opacity: 0;
   }
   100% {
@@ -204,7 +206,8 @@
 }
 
 @include keyframes(heroContentIn) {
-  0%, 35% {
+  0%,
+  35% {
     opacity: 0;
     @include transform('translateY(8px)');
   }
@@ -222,7 +225,7 @@
 ==============================================================================*/
 $min: min-width;
 $max: max-width;
-@mixin at-query ($constraint, $viewport1, $viewport2:null) {
+@mixin at-query($constraint, $viewport1, $viewport2: null) {
   @if $constraint == $min {
     @media screen and ($min: $viewport1) {
       @content;
@@ -311,8 +314,8 @@ $breakpoints: (
   'xlarge' '(min-width: #{$xlarge})'
 );
 $breakpoint-has-widths: ('small', 'medium', 'medium-down', 'large', 'xlarge');
-$breakpoint-has-push:  ('medium', 'medium-down', 'large');
-$breakpoint-has-pull:  ('medium', 'medium-down', 'large');
+$breakpoint-has-push: ('medium', 'medium-down', 'large');
+$breakpoint-has-pull: ('medium', 'medium-down', 'large');
 
 /*================ Color variables ================*/
 $colorPrimary: #ff6b53;
@@ -409,8 +412,6 @@ $collageImageLarge: 520px;
 $collageImageMedium: 310px;
 $collageImageSmall: 230px;
 
-
-
 // Collection Collage Grid
 // These heights are used to determine the row height for the
 // collection grid.
@@ -423,36 +424,38 @@ $passwordPageUseBgImage: true;
 
 // Section onboarding
 $color-blankstate: rgba($colorTextBody, 0.35);
-$color-blankstate-background: rgba($colorTextBody, 0.10);
+$color-blankstate-background: rgba($colorTextBody, 0.1);
 
 /*================ Typography ================*/
 @font-face {
   font-family: Arapey;
   font-weight: 400;
   font-style: normal;
-  src: url("https://fonts.shopifycdn.com/arapey/arapey_n4.2d2866546ce54f39e3baf69f5d944e54b2e0771b.woff2?h1=c3VubmllbmF0dXJhbC5jb20&hmac=28f49b3e6e6374329fccd75f6e23eea9067cc6ded1af61262dd11cd84302d184") format("woff2"),
-       url("https://fonts.shopifycdn.com/arapey/arapey_n4.a5bf746bd7b4646dec7a42e0f36c7afe1b3785db.woff?h1=c3VubmllbmF0dXJhbC5jb20&hmac=15fb02c7b4f3d649572d663d587f310106cad968df3b4448bc253ba81b13ea81") format("woff");
+  src: url('https://fonts.shopifycdn.com/arapey/arapey_n4.2d2866546ce54f39e3baf69f5d944e54b2e0771b.woff2?h1=c3VubmllbmF0dXJhbC5jb20&hmac=28f49b3e6e6374329fccd75f6e23eea9067cc6ded1af61262dd11cd84302d184')
+      format('woff2'),
+    url('https://fonts.shopifycdn.com/arapey/arapey_n4.a5bf746bd7b4646dec7a42e0f36c7afe1b3785db.woff?h1=c3VubmllbmF0dXJhbC5jb20&hmac=15fb02c7b4f3d649572d663d587f310106cad968df3b4448bc253ba81b13ea81')
+      format('woff');
 }
 
 @font-face {
   font-family: Armata;
   font-weight: 400;
   font-style: normal;
-  src: url("https://fonts.shopifycdn.com/armata/armata_n4.d172bef2d41642575528fee03ca354bd54d6eb34.woff2?h1=c3VubmllbmF0dXJhbC5jb20&hmac=a7eeda0ebc0424305d3a53236a72e0d5683f0b9896019a1d9241a40a8b0ddab7") format("woff2"),
-       url("https://fonts.shopifycdn.com/armata/armata_n4.b209e7e3ec2a47206c1c0520afa5b131cc180e80.woff?h1=c3VubmllbmF0dXJhbC5jb20&hmac=4b615a54ec98139ea9ee78c9b1d5b011d053e5bd347a2141ced46e058754e0c8") format("woff");
+  src: url('https://fonts.shopifycdn.com/armata/armata_n4.d172bef2d41642575528fee03ca354bd54d6eb34.woff2?h1=c3VubmllbmF0dXJhbC5jb20&hmac=a7eeda0ebc0424305d3a53236a72e0d5683f0b9896019a1d9241a40a8b0ddab7')
+      format('woff2'),
+    url('https://fonts.shopifycdn.com/armata/armata_n4.b209e7e3ec2a47206c1c0520afa5b131cc180e80.woff?h1=c3VubmllbmF0dXJhbC5jb20&hmac=4b615a54ec98139ea9ee78c9b1d5b011d053e5bd347a2141ced46e058754e0c8')
+      format('woff');
 }
-
 
 @font-face {
   font-family: Arapey;
   font-weight: 400;
   font-style: italic;
-  src: url("https://fonts.shopifycdn.com/arapey/arapey_i4.76b9c74110c86df9446495f3b98d8ff62e62229e.woff2?h1=c3VubmllbmF0dXJhbC5jb20&hmac=49057d30c7f1511071a479af1f8a2796fd6aeb47e129ae4adbfdde5374ef3521") format("woff2"),
-       url("https://fonts.shopifycdn.com/arapey/arapey_i4.54a950529ca14266fc22b37574a97a78f656c7bb.woff?h1=c3VubmllbmF0dXJhbC5jb20&hmac=8e3a51a7567af76d58fb1c95774f6c62770b244e094fe643acfa68f92216afd3") format("woff");
+  src: url('https://fonts.shopifycdn.com/arapey/arapey_i4.76b9c74110c86df9446495f3b98d8ff62e62229e.woff2?h1=c3VubmllbmF0dXJhbC5jb20&hmac=49057d30c7f1511071a479af1f8a2796fd6aeb47e129ae4adbfdde5374ef3521')
+      format('woff2'),
+    url('https://fonts.shopifycdn.com/arapey/arapey_i4.54a950529ca14266fc22b37574a97a78f656c7bb.woff?h1=c3VubmllbmF0dXJhbC5jb20&hmac=8e3a51a7567af76d58fb1c95774f6c62770b244e094fe643acfa68f92216afd3')
+      format('woff');
 }
-
-
-
 
 // Header Font
 $headerFontStack: Armata, sans-serif;
@@ -468,7 +471,9 @@ $bodyFontStyle: normal;
 $baseFontSize: 16px; // Henceforth known as 1em
 
 // Accent Font
-$accentFontStack: "New York", Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+$accentFontStack: 'New York', Iowan Old Style, Apple Garamond, Baskerville,
+  Times New Roman, Droid Serif, Times, Source Serif Pro, serif,
+  Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
 $accentFontWeight: 400;
 $accentFontWeightBold: 700;
 $accentFontStyle: normal;
@@ -476,49 +481,70 @@ $accentFontStyle: normal;
 @font-face {
   font-family: 'icons';
   src: url('//cdn.shopify.com/s/files/1/0532/7477/1615/t/6/assets/icons.eot?v=11298153234806265256');
-  src: url('//cdn.shopify.com/s/files/1/0532/7477/1615/t/6/assets/icons.eot?v=11298153234806265256#iefix') format("embedded-opentype"),
-       url('//cdn.shopify.com/s/files/1/0532/7477/1615/t/6/assets/icons.woff?v=2408938297684835138') format("woff"),
-       url('//cdn.shopify.com/s/files/1/0532/7477/1615/t/6/assets/icons.ttf?v=17785143920645075297') format("truetype"),
-       url('//cdn.shopify.com/s/files/1/0532/7477/1615/t/6/assets/icons.svg?v=18275316767451022369#timber-icons') format("svg");
+  src: url('//cdn.shopify.com/s/files/1/0532/7477/1615/t/6/assets/icons.eot?v=11298153234806265256#iefix')
+      format('embedded-opentype'),
+    url('//cdn.shopify.com/s/files/1/0532/7477/1615/t/6/assets/icons.woff?v=2408938297684835138')
+      format('woff'),
+    url('//cdn.shopify.com/s/files/1/0532/7477/1615/t/6/assets/icons.ttf?v=17785143920645075297')
+      format('truetype'),
+    url('//cdn.shopify.com/s/files/1/0532/7477/1615/t/6/assets/icons.svg?v=18275316767451022369#timber-icons')
+      format('svg');
   font-weight: normal;
   font-style: normal;
-};
+}
 
 $socialIconFontStack: 'icons';
 
 /*================ Global | Normalize ================*/
-*, input, :before, :after {
+*,
+input,
+:before,
+:after {
   @include box-sizing();
 }
 
-html, body {
+html,
+body {
   padding: 0;
   margin: 0;
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
   display: block;
 }
 
-audio, canvas, progress, video {
+audio,
+canvas,
+progress,
+video {
   display: inline-block;
   vertical-align: baseline;
 }
 
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
   height: auto;
 }
 
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
 [hidden] {
   display: none;
 }
-
 
 /*================ Site-wide styles ================*/
 /*================ Partials | Layout Styles ================*/
@@ -532,7 +558,7 @@ body {
   margin: 0 auto;
   padding: 0 ($gutter / 2);
 
-  @include at-query ($min, $postSmall) {
+  @include at-query($min, $postSmall) {
     padding: 0 $gutter;
   }
 }
@@ -708,7 +734,7 @@ blockquote {
     font-size: 0.75em;
 
     &:before {
-      content: "\2014 \0020";
+      content: '\2014 \0020';
     }
   }
 }
@@ -813,11 +839,11 @@ td {
     - Breakpoints defined above, under #Breakpoint and Grid Variables
     - Note the inclusion of .grid-uniform to take care of clearfixes on evenly sized grid items
 ==============================================================================*/
-$responsive:         true;
-$mobile-first:       true;
+$responsive: true;
+$mobile-first: true;
 $use-silent-classes: false;
-$push:               true;
-$pull:               false;
+$push: true;
+$pull: false;
 
 /* Force clearfix on grids */
 .grid,
@@ -830,10 +856,10 @@ $pull:               false;
   clear: both;
 }
 
-$class-type: unquote(".");
+$class-type: unquote('.');
 
 @if $use-silent-classes == true {
-  $class-type: unquote("%");
+  $class-type: unquote('%');
 }
 
 @mixin grid-media-query($media-query) {
@@ -857,14 +883,13 @@ $class-type: unquote(".");
   }
 }
 
-
 /*============================================================================
   Drop relative positioning into silent classes which can't take advantage of
   the `[class*="push--"]` and `[class*="pull--"]` selectors.
 ==============================================================================*/
 @mixin silent-relative() {
   @if $use-silent-classes == true {
-    position:relative;
+    position: relative;
   }
 }
 
@@ -940,101 +965,203 @@ $class-type: unquote(".");
   WIDTHS
     - Create width classes, prefixed by the specified namespace.
 ==============================================================================*/
-@mixin device-type($namespace:"") {
+@mixin device-type($namespace: '') {
   /** Whole */
-  #{$class-type}#{$namespace}one-whole       { width: 100%; }
+  #{$class-type}#{$namespace}one-whole {
+    width: 100%;
+  }
 
   /* Halves */
-  #{$class-type}#{$namespace}one-half        { width: 50%; }
+  #{$class-type}#{$namespace}one-half {
+    width: 50%;
+  }
 
   /* Thirds */
-  #{$class-type}#{$namespace}one-third       { width: 33.333%; }
-  #{$class-type}#{$namespace}two-thirds      { width: 66.666%; }
+  #{$class-type}#{$namespace}one-third {
+    width: 33.333%;
+  }
+  #{$class-type}#{$namespace}two-thirds {
+    width: 66.666%;
+  }
 
   /* Quarters */
-  #{$class-type}#{$namespace}one-quarter     { width: 25%; }
-  #{$class-type}#{$namespace}two-quarters    { width: 50%; }
-  #{$class-type}#{$namespace}three-quarters  { width: 75%; }
+  #{$class-type}#{$namespace}one-quarter {
+    width: 25%;
+  }
+  #{$class-type}#{$namespace}two-quarters {
+    width: 50%;
+  }
+  #{$class-type}#{$namespace}three-quarters {
+    width: 75%;
+  }
 
   /* Fifths */
-  #{$class-type}#{$namespace}one-fifth       { width: 20%; }
-  #{$class-type}#{$namespace}two-fifths      { width: 40%; }
-  #{$class-type}#{$namespace}three-fifths    { width: 60%; }
-  #{$class-type}#{$namespace}four-fifths     { width: 80%; }
+  #{$class-type}#{$namespace}one-fifth {
+    width: 20%;
+  }
+  #{$class-type}#{$namespace}two-fifths {
+    width: 40%;
+  }
+  #{$class-type}#{$namespace}three-fifths {
+    width: 60%;
+  }
+  #{$class-type}#{$namespace}four-fifths {
+    width: 80%;
+  }
 
   /* Sixths */
-  #{$class-type}#{$namespace}one-sixth       { width: 16.666%; }
-  #{$class-type}#{$namespace}two-sixths      { width: 33.333%; }
-  #{$class-type}#{$namespace}three-sixths    { width: 50%; }
-  #{$class-type}#{$namespace}four-sixths     { width: 66.666%; }
-  #{$class-type}#{$namespace}five-sixths     { width: 83.333%; }
+  #{$class-type}#{$namespace}one-sixth {
+    width: 16.666%;
+  }
+  #{$class-type}#{$namespace}two-sixths {
+    width: 33.333%;
+  }
+  #{$class-type}#{$namespace}three-sixths {
+    width: 50%;
+  }
+  #{$class-type}#{$namespace}four-sixths {
+    width: 66.666%;
+  }
+  #{$class-type}#{$namespace}five-sixths {
+    width: 83.333%;
+  }
 
   /* Eighths */
-  #{$class-type}#{$namespace}one-eighth      { width: 12.5%; }
-  #{$class-type}#{$namespace}two-eighths     { width: 25%; }
-  #{$class-type}#{$namespace}three-eighths   { width: 37.5%; }
-  #{$class-type}#{$namespace}four-eighths    { width: 50%; }
-  #{$class-type}#{$namespace}five-eighths    { width: 62.5%; }
-  #{$class-type}#{$namespace}six-eighths     { width: 75%; }
-  #{$class-type}#{$namespace}seven-eighths   { width: 87.5%; }
+  #{$class-type}#{$namespace}one-eighth {
+    width: 12.5%;
+  }
+  #{$class-type}#{$namespace}two-eighths {
+    width: 25%;
+  }
+  #{$class-type}#{$namespace}three-eighths {
+    width: 37.5%;
+  }
+  #{$class-type}#{$namespace}four-eighths {
+    width: 50%;
+  }
+  #{$class-type}#{$namespace}five-eighths {
+    width: 62.5%;
+  }
+  #{$class-type}#{$namespace}six-eighths {
+    width: 75%;
+  }
+  #{$class-type}#{$namespace}seven-eighths {
+    width: 87.5%;
+  }
 
   /* Tenths */
-  #{$class-type}#{$namespace}one-tenth       { width: 10%; }
-  #{$class-type}#{$namespace}two-tenths      { width: 20%; }
-  #{$class-type}#{$namespace}three-tenths    { width: 30%; }
-  #{$class-type}#{$namespace}four-tenths     { width: 40%; }
-  #{$class-type}#{$namespace}five-tenths     { width: 50%; }
-  #{$class-type}#{$namespace}six-tenths      { width: 60%; }
-  #{$class-type}#{$namespace}seven-tenths    { width: 70%; }
-  #{$class-type}#{$namespace}eight-tenths    { width: 80%; }
-  #{$class-type}#{$namespace}nine-tenths     { width: 90%; }
+  #{$class-type}#{$namespace}one-tenth {
+    width: 10%;
+  }
+  #{$class-type}#{$namespace}two-tenths {
+    width: 20%;
+  }
+  #{$class-type}#{$namespace}three-tenths {
+    width: 30%;
+  }
+  #{$class-type}#{$namespace}four-tenths {
+    width: 40%;
+  }
+  #{$class-type}#{$namespace}five-tenths {
+    width: 50%;
+  }
+  #{$class-type}#{$namespace}six-tenths {
+    width: 60%;
+  }
+  #{$class-type}#{$namespace}seven-tenths {
+    width: 70%;
+  }
+  #{$class-type}#{$namespace}eight-tenths {
+    width: 80%;
+  }
+  #{$class-type}#{$namespace}nine-tenths {
+    width: 90%;
+  }
 
   /* Twelfths */
-  #{$class-type}#{$namespace}one-twelfth     { width: 8.333%; }
-  #{$class-type}#{$namespace}two-twelfths    { width: 16.666%; }
-  #{$class-type}#{$namespace}three-twelfths  { width: 25%; }
-  #{$class-type}#{$namespace}four-twelfths   { width: 33.333%; }
-  #{$class-type}#{$namespace}five-twelfths   { width: 41.666% }
-  #{$class-type}#{$namespace}six-twelfths    { width: 50%; }
-  #{$class-type}#{$namespace}seven-twelfths  { width: 58.333%; }
-  #{$class-type}#{$namespace}eight-twelfths  { width: 66.666%; }
-  #{$class-type}#{$namespace}nine-twelfths   { width: 75%; }
-  #{$class-type}#{$namespace}ten-twelfths    { width: 83.333%; }
-  #{$class-type}#{$namespace}eleven-twelfths { width: 91.666%; }
+  #{$class-type}#{$namespace}one-twelfth {
+    width: 8.333%;
+  }
+  #{$class-type}#{$namespace}two-twelfths {
+    width: 16.666%;
+  }
+  #{$class-type}#{$namespace}three-twelfths {
+    width: 25%;
+  }
+  #{$class-type}#{$namespace}four-twelfths {
+    width: 33.333%;
+  }
+  #{$class-type}#{$namespace}five-twelfths {
+    width: 41.666%;
+  }
+  #{$class-type}#{$namespace}six-twelfths {
+    width: 50%;
+  }
+  #{$class-type}#{$namespace}seven-twelfths {
+    width: 58.333%;
+  }
+  #{$class-type}#{$namespace}eight-twelfths {
+    width: 66.666%;
+  }
+  #{$class-type}#{$namespace}nine-twelfths {
+    width: 75%;
+  }
+  #{$class-type}#{$namespace}ten-twelfths {
+    width: 83.333%;
+  }
+  #{$class-type}#{$namespace}eleven-twelfths {
+    width: 91.666%;
+  }
 }
 
 /*================ Clearfix helper on uniform grids ================*/
-@mixin clearfix-helper($namespace:"") {
+@mixin clearfix-helper($namespace: '') {
   .grid-uniform {
-    #{$class-type}#{$namespace}one-half:nth-child(2n+1),
-    #{$class-type}#{$namespace}one-third:nth-child(3n+1),
-    #{$class-type}#{$namespace}one-quarter:nth-child(4n+1),
-    #{$class-type}#{$namespace}one-fifth:nth-child(5n+1),
-    #{$class-type}#{$namespace}one-sixth:nth-child(6n+1),
-    #{$class-type}#{$namespace}two-sixths:nth-child(3n+1),
-    #{$class-type}#{$namespace}three-sixths:nth-child(2n+1),
-    #{$class-type}#{$namespace}two-eighths:nth-child(4n+1),
-    #{$class-type}#{$namespace}four-eighths:nth-child(2n+1),
-    #{$class-type}#{$namespace}five-tenths:nth-child(2n+1),
-    #{$class-type}#{$namespace}one-twelfth:nth-child(12n+1),
-    #{$class-type}#{$namespace}two-twelfths:nth-child(6n+1),
-    #{$class-type}#{$namespace}three-twelfths:nth-child(4n+1),
-    #{$class-type}#{$namespace}four-twelfths:nth-child(3n+1),
-    #{$class-type}#{$namespace}six-twelfths:nth-child(2n+1)    { clear: both; }
+    #{$class-type}#{$namespace}one-half:nth-child(2n + 1),
+    #{$class-type}#{$namespace}one-third:nth-child(3n + 1),
+    #{$class-type}#{$namespace}one-quarter:nth-child(4n + 1),
+    #{$class-type}#{$namespace}one-fifth:nth-child(5n + 1),
+    #{$class-type}#{$namespace}one-sixth:nth-child(6n + 1),
+    #{$class-type}#{$namespace}two-sixths:nth-child(3n + 1),
+    #{$class-type}#{$namespace}three-sixths:nth-child(2n + 1),
+    #{$class-type}#{$namespace}two-eighths:nth-child(4n + 1),
+    #{$class-type}#{$namespace}four-eighths:nth-child(2n + 1),
+    #{$class-type}#{$namespace}five-tenths:nth-child(2n + 1),
+    #{$class-type}#{$namespace}one-twelfth:nth-child(12n + 1),
+    #{$class-type}#{$namespace}two-twelfths:nth-child(6n + 1),
+    #{$class-type}#{$namespace}three-twelfths:nth-child(4n + 1),
+    #{$class-type}#{$namespace}four-twelfths:nth-child(3n + 1),
+    #{$class-type}#{$namespace}six-twelfths:nth-child(2n + 1) {
+      clear: both;
+    }
   }
 }
 
 /*================ Helper show/hide classes around our breakpoints ================*/
-@mixin device-helper($namespace:"") {
-  #{$class-type}#{$namespace}show        { display: block!important; }
-  #{$class-type}#{$namespace}hide        { display: none!important; }
+@mixin device-helper($namespace: '') {
+  #{$class-type}#{$namespace}show {
+    display: block !important;
+  }
+  #{$class-type}#{$namespace}hide {
+    display: none !important;
+  }
 
-  #{$class-type}#{$namespace}text-left   { text-align: left!important; }
-  #{$class-type}#{$namespace}text-right  { text-align: right!important; }
-  #{$class-type}#{$namespace}text-center { text-align: center!important; }
+  #{$class-type}#{$namespace}text-left {
+    text-align: left !important;
+  }
+  #{$class-type}#{$namespace}text-right {
+    text-align: right !important;
+  }
+  #{$class-type}#{$namespace}text-center {
+    text-align: center !important;
+  }
 
-  #{$class-type}#{$namespace}left        { float: left!important; }
-  #{$class-type}#{$namespace}right       { float: right!important; }
+  #{$class-type}#{$namespace}left {
+    float: left !important;
+  }
+  #{$class-type}#{$namespace}right {
+    float: right !important;
+  }
 }
 
 /*================ Our regular, non-responsive width and helper classes ================*/
@@ -1056,71 +1183,202 @@ $class-type: unquote(".");
   PUSH
     - Push classes, to move grid items over to the right by certain amounts
 ==============================================================================*/
-@mixin push-setup($namespace: "") {
+@mixin push-setup($namespace: '') {
   /* Whole */
-  #{$class-type}push--#{$namespace}one-whole       { left: 100%; @include silent-relative(); }
+  #{$class-type}push--#{$namespace}one-whole {
+    left: 100%;
+    @include silent-relative();
+  }
 
   /* Halves */
-  #{$class-type}push--#{$namespace}one-half        { left: 50%; @include silent-relative(); }
+  #{$class-type}push--#{$namespace}one-half {
+    left: 50%;
+    @include silent-relative();
+  }
 
   /* Thirds */
-  #{$class-type}push--#{$namespace}one-third       { left: 33.333%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}two-thirds      { left: 66.666%; @include silent-relative(); }
+  #{$class-type}push--#{$namespace}one-third {
+    left: 33.333%;
+    @include silent-relative();
+  }
+  #{$class-type}push--#{$namespace}two-thirds {
+    left: 66.666%;
+    @include silent-relative();
+  }
 
   /* Quarters */
-  #{$class-type}push--#{$namespace}one-quarter     { left: 25%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}two-quarters    { left: 50%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}three-quarters  { left: 75%; @include silent-relative(); }
+  #{$class-type}push--#{$namespace}one-quarter {
+    left: 25%;
+    @include silent-relative();
+  }
+  #{$class-type}push--#{$namespace}two-quarters {
+    left: 50%;
+    @include silent-relative();
+  }
+  #{$class-type}push--#{$namespace}three-quarters {
+    left: 75%;
+    @include silent-relative();
+  }
 
   /* Fifths */
-  #{$class-type}push--#{$namespace}one-fifth       { left: 20%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}two-fifths      { left: 40%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}three-fifths    { left: 60%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}four-fifths     { left: 80%; @include silent-relative(); }
+  #{$class-type}push--#{$namespace}one-fifth {
+    left: 20%;
+    @include silent-relative();
+  }
+  #{$class-type}push--#{$namespace}two-fifths {
+    left: 40%;
+    @include silent-relative();
+  }
+  #{$class-type}push--#{$namespace}three-fifths {
+    left: 60%;
+    @include silent-relative();
+  }
+  #{$class-type}push--#{$namespace}four-fifths {
+    left: 80%;
+    @include silent-relative();
+  }
 
   /* Sixths */
-  #{$class-type}push--#{$namespace}one-sixth       { left: 16.666%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}two-sixths      { left: 33.333%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}three-sixths    { left: 50%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}four-sixths     { left: 66.666%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}five-sixths     { left: 83.333%; @include silent-relative(); }
+  #{$class-type}push--#{$namespace}one-sixth {
+    left: 16.666%;
+    @include silent-relative();
+  }
+  #{$class-type}push--#{$namespace}two-sixths {
+    left: 33.333%;
+    @include silent-relative();
+  }
+  #{$class-type}push--#{$namespace}three-sixths {
+    left: 50%;
+    @include silent-relative();
+  }
+  #{$class-type}push--#{$namespace}four-sixths {
+    left: 66.666%;
+    @include silent-relative();
+  }
+  #{$class-type}push--#{$namespace}five-sixths {
+    left: 83.333%;
+    @include silent-relative();
+  }
 
   /* Eighths */
-  #{$class-type}push--#{$namespace}one-eighth      { left: 12.5%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}two-eighths     { left: 25%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}three-eighths   { left: 37.5%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}four-eighths    { left: 50%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}five-eighths    { left: 62.5%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}six-eighths     { left: 75%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}seven-eighths   { left: 87.5%; @include silent-relative(); }
+  #{$class-type}push--#{$namespace}one-eighth {
+    left: 12.5%;
+    @include silent-relative();
+  }
+  #{$class-type}push--#{$namespace}two-eighths {
+    left: 25%;
+    @include silent-relative();
+  }
+  #{$class-type}push--#{$namespace}three-eighths {
+    left: 37.5%;
+    @include silent-relative();
+  }
+  #{$class-type}push--#{$namespace}four-eighths {
+    left: 50%;
+    @include silent-relative();
+  }
+  #{$class-type}push--#{$namespace}five-eighths {
+    left: 62.5%;
+    @include silent-relative();
+  }
+  #{$class-type}push--#{$namespace}six-eighths {
+    left: 75%;
+    @include silent-relative();
+  }
+  #{$class-type}push--#{$namespace}seven-eighths {
+    left: 87.5%;
+    @include silent-relative();
+  }
 
   /* Tenths */
-  #{$class-type}push--#{$namespace}one-tenth       { left: 10%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}two-tenths      { left: 20%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}three-tenths    { left: 30%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}four-tenths     { left: 40%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}five-tenths     { left: 50%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}six-tenths      { left: 60%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}seven-tenths    { left: 70%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}eight-tenths    { left: 80%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}nine-tenths     { left: 90%; @include silent-relative(); }
+  #{$class-type}push--#{$namespace}one-tenth {
+    left: 10%;
+    @include silent-relative();
+  }
+  #{$class-type}push--#{$namespace}two-tenths {
+    left: 20%;
+    @include silent-relative();
+  }
+  #{$class-type}push--#{$namespace}three-tenths {
+    left: 30%;
+    @include silent-relative();
+  }
+  #{$class-type}push--#{$namespace}four-tenths {
+    left: 40%;
+    @include silent-relative();
+  }
+  #{$class-type}push--#{$namespace}five-tenths {
+    left: 50%;
+    @include silent-relative();
+  }
+  #{$class-type}push--#{$namespace}six-tenths {
+    left: 60%;
+    @include silent-relative();
+  }
+  #{$class-type}push--#{$namespace}seven-tenths {
+    left: 70%;
+    @include silent-relative();
+  }
+  #{$class-type}push--#{$namespace}eight-tenths {
+    left: 80%;
+    @include silent-relative();
+  }
+  #{$class-type}push--#{$namespace}nine-tenths {
+    left: 90%;
+    @include silent-relative();
+  }
 
   /* Twelfths */
-  #{$class-type}push--#{$namespace}one-twelfth     { left: 8.333%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}two-twelfths    { left: 16.666%; @include silent-relative();  }
-  #{$class-type}push--#{$namespace}three-twelfths  { left: 25%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}four-twelfths   { left: 33.333%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}five-twelfths   { left: 41.666%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}six-twelfths    { left: 50%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}seven-twelfths  { left: 58.333%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}eight-twelfths  { left: 66.666%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}nine-twelfths   { left: 75%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}ten-twelfths    { left: 83.333%; @include silent-relative(); }
-  #{$class-type}push--#{$namespace}eleven-twelfths { left: 91.666%; @include silent-relative(); }
+  #{$class-type}push--#{$namespace}one-twelfth {
+    left: 8.333%;
+    @include silent-relative();
+  }
+  #{$class-type}push--#{$namespace}two-twelfths {
+    left: 16.666%;
+    @include silent-relative();
+  }
+  #{$class-type}push--#{$namespace}three-twelfths {
+    left: 25%;
+    @include silent-relative();
+  }
+  #{$class-type}push--#{$namespace}four-twelfths {
+    left: 33.333%;
+    @include silent-relative();
+  }
+  #{$class-type}push--#{$namespace}five-twelfths {
+    left: 41.666%;
+    @include silent-relative();
+  }
+  #{$class-type}push--#{$namespace}six-twelfths {
+    left: 50%;
+    @include silent-relative();
+  }
+  #{$class-type}push--#{$namespace}seven-twelfths {
+    left: 58.333%;
+    @include silent-relative();
+  }
+  #{$class-type}push--#{$namespace}eight-twelfths {
+    left: 66.666%;
+    @include silent-relative();
+  }
+  #{$class-type}push--#{$namespace}nine-twelfths {
+    left: 75%;
+    @include silent-relative();
+  }
+  #{$class-type}push--#{$namespace}ten-twelfths {
+    left: 83.333%;
+    @include silent-relative();
+  }
+  #{$class-type}push--#{$namespace}eleven-twelfths {
+    left: 91.666%;
+    @include silent-relative();
+  }
 }
 
 @if $push == true {
-  [class*="push--"]{ position:relative; }
+  [class*='push--'] {
+    position: relative;
+  }
 
   @include push-setup();
 
@@ -1137,71 +1395,202 @@ $class-type: unquote(".");
   PULL
     - Pull classes, to move grid items back to the left by certain amounts
 ==============================================================================*/
-@mixin pull-setup($namespace: "") {
+@mixin pull-setup($namespace: '') {
   /* Whole */
-  #{$class-type}pull--#{$namespace}one-whole       { right: 100%; @include silent-relative(); }
+  #{$class-type}pull--#{$namespace}one-whole {
+    right: 100%;
+    @include silent-relative();
+  }
 
   /* Halves */
-  #{$class-type}pull--#{$namespace}one-half        { right: 50%; @include silent-relative(); }
+  #{$class-type}pull--#{$namespace}one-half {
+    right: 50%;
+    @include silent-relative();
+  }
 
   /* Thirds */
-  #{$class-type}pull--#{$namespace}one-third       { right: 33.333%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}two-thirds      { right: 66.666%; @include silent-relative(); }
+  #{$class-type}pull--#{$namespace}one-third {
+    right: 33.333%;
+    @include silent-relative();
+  }
+  #{$class-type}pull--#{$namespace}two-thirds {
+    right: 66.666%;
+    @include silent-relative();
+  }
 
   /* Quarters */
-  #{$class-type}pull--#{$namespace}one-quarter     { right: 25%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}two-quarters    { right: 50%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}three-quarters  { right: 75%; @include silent-relative(); }
+  #{$class-type}pull--#{$namespace}one-quarter {
+    right: 25%;
+    @include silent-relative();
+  }
+  #{$class-type}pull--#{$namespace}two-quarters {
+    right: 50%;
+    @include silent-relative();
+  }
+  #{$class-type}pull--#{$namespace}three-quarters {
+    right: 75%;
+    @include silent-relative();
+  }
 
   /* Fifths */
-  #{$class-type}pull--#{$namespace}one-fifth       { right: 20%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}two-fifths      { right: 40%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}three-fifths    { right: 60%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}four-fifths     { right: 80%; @include silent-relative(); }
+  #{$class-type}pull--#{$namespace}one-fifth {
+    right: 20%;
+    @include silent-relative();
+  }
+  #{$class-type}pull--#{$namespace}two-fifths {
+    right: 40%;
+    @include silent-relative();
+  }
+  #{$class-type}pull--#{$namespace}three-fifths {
+    right: 60%;
+    @include silent-relative();
+  }
+  #{$class-type}pull--#{$namespace}four-fifths {
+    right: 80%;
+    @include silent-relative();
+  }
 
   /* Sixths */
-  #{$class-type}pull--#{$namespace}one-sixth       { right: 16.666%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}two-sixths      { right: 33.333%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}three-sixths    { right: 50%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}four-sixths     { right: 66.666%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}five-sixths     { right: 83.333%; @include silent-relative(); }
+  #{$class-type}pull--#{$namespace}one-sixth {
+    right: 16.666%;
+    @include silent-relative();
+  }
+  #{$class-type}pull--#{$namespace}two-sixths {
+    right: 33.333%;
+    @include silent-relative();
+  }
+  #{$class-type}pull--#{$namespace}three-sixths {
+    right: 50%;
+    @include silent-relative();
+  }
+  #{$class-type}pull--#{$namespace}four-sixths {
+    right: 66.666%;
+    @include silent-relative();
+  }
+  #{$class-type}pull--#{$namespace}five-sixths {
+    right: 83.333%;
+    @include silent-relative();
+  }
 
   /* Eighths */
-  #{$class-type}pull--#{$namespace}one-eighth      { right: 12.5%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}two-eighths     { right: 25%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}three-eighths   { right: 37.5%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}four-eighths    { right: 50%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}five-eighths    { right: 62.5%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}six-eighths     { right: 75%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}seven-eighths   { right: 87.5%; @include silent-relative(); }
+  #{$class-type}pull--#{$namespace}one-eighth {
+    right: 12.5%;
+    @include silent-relative();
+  }
+  #{$class-type}pull--#{$namespace}two-eighths {
+    right: 25%;
+    @include silent-relative();
+  }
+  #{$class-type}pull--#{$namespace}three-eighths {
+    right: 37.5%;
+    @include silent-relative();
+  }
+  #{$class-type}pull--#{$namespace}four-eighths {
+    right: 50%;
+    @include silent-relative();
+  }
+  #{$class-type}pull--#{$namespace}five-eighths {
+    right: 62.5%;
+    @include silent-relative();
+  }
+  #{$class-type}pull--#{$namespace}six-eighths {
+    right: 75%;
+    @include silent-relative();
+  }
+  #{$class-type}pull--#{$namespace}seven-eighths {
+    right: 87.5%;
+    @include silent-relative();
+  }
 
   /* Tenths */
-  #{$class-type}pull--#{$namespace}one-tenth       { right: 10%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}two-tenths      { right: 20%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}three-tenths    { right: 30%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}four-tenths     { right: 40%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}five-tenths     { right: 50%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}six-tenths      { right: 60%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}seven-tenths    { right: 70%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}eight-tenths    { right: 80%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}nine-tenths     { right: 90%; @include silent-relative(); }
+  #{$class-type}pull--#{$namespace}one-tenth {
+    right: 10%;
+    @include silent-relative();
+  }
+  #{$class-type}pull--#{$namespace}two-tenths {
+    right: 20%;
+    @include silent-relative();
+  }
+  #{$class-type}pull--#{$namespace}three-tenths {
+    right: 30%;
+    @include silent-relative();
+  }
+  #{$class-type}pull--#{$namespace}four-tenths {
+    right: 40%;
+    @include silent-relative();
+  }
+  #{$class-type}pull--#{$namespace}five-tenths {
+    right: 50%;
+    @include silent-relative();
+  }
+  #{$class-type}pull--#{$namespace}six-tenths {
+    right: 60%;
+    @include silent-relative();
+  }
+  #{$class-type}pull--#{$namespace}seven-tenths {
+    right: 70%;
+    @include silent-relative();
+  }
+  #{$class-type}pull--#{$namespace}eight-tenths {
+    right: 80%;
+    @include silent-relative();
+  }
+  #{$class-type}pull--#{$namespace}nine-tenths {
+    right: 90%;
+    @include silent-relative();
+  }
 
   /* Twelfths */
-  #{$class-type}pull--#{$namespace}one-twelfth     { right: 8.333%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}two-twelfths    { right: 16.666%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}three-twelfths  { right: 25%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}four-twelfths   { right: 33.333%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}five-twelfths   { right: 41.666%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}six-twelfths    { right: 50%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}seven-twelfths  { right: 58.333%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}eight-twelfths  { right: 66.666%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}nine-twelfths   { right: 75%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}ten-twelfths    { right: 83.333%; @include silent-relative(); }
-  #{$class-type}pull--#{$namespace}eleven-twelfths { right: 91.666%; @include silent-relative(); }
+  #{$class-type}pull--#{$namespace}one-twelfth {
+    right: 8.333%;
+    @include silent-relative();
+  }
+  #{$class-type}pull--#{$namespace}two-twelfths {
+    right: 16.666%;
+    @include silent-relative();
+  }
+  #{$class-type}pull--#{$namespace}three-twelfths {
+    right: 25%;
+    @include silent-relative();
+  }
+  #{$class-type}pull--#{$namespace}four-twelfths {
+    right: 33.333%;
+    @include silent-relative();
+  }
+  #{$class-type}pull--#{$namespace}five-twelfths {
+    right: 41.666%;
+    @include silent-relative();
+  }
+  #{$class-type}pull--#{$namespace}six-twelfths {
+    right: 50%;
+    @include silent-relative();
+  }
+  #{$class-type}pull--#{$namespace}seven-twelfths {
+    right: 58.333%;
+    @include silent-relative();
+  }
+  #{$class-type}pull--#{$namespace}eight-twelfths {
+    right: 66.666%;
+    @include silent-relative();
+  }
+  #{$class-type}pull--#{$namespace}nine-twelfths {
+    right: 75%;
+    @include silent-relative();
+  }
+  #{$class-type}pull--#{$namespace}ten-twelfths {
+    right: 83.333%;
+    @include silent-relative();
+  }
+  #{$class-type}pull--#{$namespace}eleven-twelfths {
+    right: 91.666%;
+    @include silent-relative();
+  }
 }
 
 @if $pull == true {
-  [class*="pull--"]{ position:relative; }
+  [class*='pull--'] {
+    position: relative;
+  }
 
   @include pull-setup();
 
@@ -1217,9 +1606,10 @@ $class-type: unquote(".");
 /*================ Partials | Helper Classes ================*/
 .clearfix {
   &:after {
-    content: "";
+    content: '';
     display: table;
-    clear: both; }
+    clear: both;
+  }
   *zoom: 1;
 }
 
@@ -1284,7 +1674,7 @@ a,
   }
 }
 
-a[href^="tel"] {
+a[href^='tel'] {
   color: inherit;
 }
 
@@ -1311,7 +1701,7 @@ html input[disabled] {
   white-space: normal;
   cursor: pointer;
   border: 1px solid transparent;
-  @include prefix("user-select", "none");
+  @include prefix('user-select', 'none');
   -webkit-appearance: none;
   -moz-appearance: none;
   border-radius: $radius;
@@ -1490,7 +1880,7 @@ legend {
 }
 
 button,
-input[type="submit"] {
+input[type='submit'] {
   cursor: pointer;
 }
 
@@ -1519,24 +1909,24 @@ textarea {
 }
 
 /*================ Input element overrides ================*/
-input[type="checkbox"],
-input[type="radio"] {
+input[type='checkbox'],
+input[type='radio'] {
   margin: 0 10px 0 0;
   padding: 0;
   width: auto;
 }
 
-input[type="checkbox"] {
+input[type='checkbox'] {
   -webkit-appearance: checkbox;
   -moz-appearance: checkbox;
 }
 
-input[type="radio"] {
+input[type='radio'] {
   -webkit-appearance: radio;
   -moz-appearance: radio;
 }
 
-input[type="image"] {
+input[type='image'] {
   padding-left: 0;
   padding-right: 0;
 }
@@ -1554,7 +1944,7 @@ select {
   }
   padding-right: 28px;
   text-indent: 0.01px;
-  text-overflow: "";
+  text-overflow: '';
   cursor: pointer;
 }
 
@@ -1590,8 +1980,8 @@ label[for] {
     margin-bottom: 10px;
   }
 
-  input[type="checkbox"],
-  input[type="radio"],
+  input[type='checkbox'],
+  input[type='radio'],
   .btn {
     display: inline-block;
   }
@@ -1624,8 +2014,8 @@ label.error {
   .input-group-field:first-child,
   .input-group-btn:first-child,
   .input-group-btn:first-child > .btn,
-  input[type="hidden"]:first-child + .input-group-field,
-  input[type="hidden"]:first-child + .input-group-btn > .btn {
+  input[type='hidden']:first-child + .input-group-field,
+  input[type='hidden']:first-child + .input-group-btn > .btn {
     border-radius: $radius 0 0 $radius;
   }
 
@@ -1683,10 +2073,14 @@ label.error {
 @font-face {
   font-family: 'icons';
   src: url('//cdn.shopify.com/s/files/1/0532/7477/1615/t/6/assets/icons.eot?v=11298153234806265256');
-  src: url('//cdn.shopify.com/s/files/1/0532/7477/1615/t/6/assets/icons.eot?v=11298153234806265256#iefix') format('embedded-opentype'),
-    url('//cdn.shopify.com/s/files/1/0532/7477/1615/t/6/assets/icons.woff?v=2408938297684835138') format('woff'),
-    url('//cdn.shopify.com/s/files/1/0532/7477/1615/t/6/assets/icons.ttf?v=17785143920645075297') format('truetype'),
-    url('//cdn.shopify.com/s/files/1/0532/7477/1615/t/6/assets/icons.svg?v=18275316767451022369#timber-icons') format('svg');
+  src: url('//cdn.shopify.com/s/files/1/0532/7477/1615/t/6/assets/icons.eot?v=11298153234806265256#iefix')
+      format('embedded-opentype'),
+    url('//cdn.shopify.com/s/files/1/0532/7477/1615/t/6/assets/icons.woff?v=2408938297684835138')
+      format('woff'),
+    url('//cdn.shopify.com/s/files/1/0532/7477/1615/t/6/assets/icons.ttf?v=17785143920645075297')
+      format('truetype'),
+    url('//cdn.shopify.com/s/files/1/0532/7477/1615/t/6/assets/icons.svg?v=18275316767451022369#timber-icons')
+      format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -1727,33 +2121,87 @@ $socialIconFontStack: 'icons';
 }
 
 /*================ Icon mapping ================*/
-.icon-arrow-down:before { content:'\e607'; }
-.icon-arrow-left:before { content:'\e900'; }
-.icon-arrow-right:before { content:'\e901'; }
-.icon-cart:before { content:'\e600'; }
-.icon-customer:before { content:'\e605'; }
-.icon-facebook:before { content:'\e609'; }
-.icon-fancy:before { content:'\46'; }
-.icon-google_plus:before { content:'\e90a'; }
-.icon-hamburger:before { content:'\e601'; }
-.icon-instagram:before { content:'\e907'; }
-.icon-minus:before { content:'\e602'; }
-.icon-pause:before { content: "\e902"; }
-.icon-pin:before { content:'\e90d'; }
-.icon-pinterest:before { content:'\e608'; }
-.icon-play:before { content: "\e904"; }
-.icon-plus:before { content:'\e603'; }
-.icon-rss:before { content:'\72'; }
-.icon-saletag:before { content: "\e906"; }
-.icon-search:before { content:'\73'; }
-.icon-snapchat:before { content:'\e90b'; }
-.icon-slide-prev:before { content: "\e903"; }
-.icon-slide-next:before { content: "\e905"; }
-.icon-tumblr:before { content:'\74'; }
-.icon-twitter:before { content:'\54'; }
-.icon-vimeo:before { content:'\76'; }
-.icon-x:before { content:'\e604'; }
-.icon-youtube:before { content:'\79'; }
+.icon-arrow-down:before {
+  content: '\e607';
+}
+.icon-arrow-left:before {
+  content: '\e900';
+}
+.icon-arrow-right:before {
+  content: '\e901';
+}
+.icon-cart:before {
+  content: '\e600';
+}
+.icon-customer:before {
+  content: '\e605';
+}
+.icon-facebook:before {
+  content: '\e609';
+}
+.icon-fancy:before {
+  content: '\46';
+}
+.icon-google_plus:before {
+  content: '\e90a';
+}
+.icon-hamburger:before {
+  content: '\e601';
+}
+.icon-instagram:before {
+  content: '\e907';
+}
+.icon-minus:before {
+  content: '\e602';
+}
+.icon-pause:before {
+  content: '\e902';
+}
+.icon-pin:before {
+  content: '\e90d';
+}
+.icon-pinterest:before {
+  content: '\e608';
+}
+.icon-play:before {
+  content: '\e904';
+}
+.icon-plus:before {
+  content: '\e603';
+}
+.icon-rss:before {
+  content: '\72';
+}
+.icon-saletag:before {
+  content: '\e906';
+}
+.icon-search:before {
+  content: '\73';
+}
+.icon-snapchat:before {
+  content: '\e90b';
+}
+.icon-slide-prev:before {
+  content: '\e903';
+}
+.icon-slide-next:before {
+  content: '\e905';
+}
+.icon-tumblr:before {
+  content: '\74';
+}
+.icon-twitter:before {
+  content: '\54';
+}
+.icon-vimeo:before {
+  content: '\76';
+}
+.icon-x:before {
+  content: '\e604';
+}
+.icon-youtube:before {
+  content: '\79';
+}
 
 .payment-icons {
   @include prefix('user-select', 'none');
@@ -1774,8 +2222,6 @@ $socialIconFontStack: 'icons';
     height: 24px;
   }
 }
-
-
 
 .social-icons .icon {
   padding-right: 4px;
@@ -1941,8 +2387,6 @@ $socialIconFontStack: 'icons';
     @include animation(spin 1s infinite linear);
   }
 }
-
-
 
 /*================ Module-specific styles ================*/
 /*================ Module | Footer ================*/
@@ -2110,17 +2554,26 @@ $socialIconFontStack: 'icons';
   }
 
   // Add some top margin to headers from the rich text editor
-  h1, h4, h5, h6 {
+  h1,
+  h4,
+  h5,
+  h6 {
     margin-top: 2em;
     margin-bottom: 2em;
   }
 
-  h2, h3 {
+  h2,
+  h3 {
     margin-top: 2.5em;
     margin-bottom: 2em;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     &:first-child {
       margin-top: 0;
     }
@@ -2163,7 +2616,7 @@ $socialIconFontStack: 'icons';
 /*================ Indented article/page images and blockquotes ================*/
 .rte--indented-images {
   img:not([style]),
-  img[style="float: none;"] {
+  img[style='float: none;'] {
     max-width: 100%;
 
     @include at-query($min, $medium) {
@@ -2177,11 +2630,11 @@ $socialIconFontStack: 'icons';
     }
   }
 
-  img[style="float: right;"] {
+  img[style='float: right;'] {
     margin: 0 -10% ($gutter / 2) ($gutter / 2);
   }
 
-  img[style="float: left;"] {
+  img[style='float: left;'] {
     margin: 0 ($gutter / 2) ($gutter / 2) -10%;
   }
 }
@@ -2310,7 +2763,7 @@ $socialIconFontStack: 'icons';
   padding: 80px 0;
 }
 
-@include at-query ($min, $large) {
+@include at-query($min, $large) {
   .section-header {
     display: table;
     table-layout: fixed;
@@ -2326,8 +2779,14 @@ $socialIconFontStack: 'icons';
     vertical-align: middle;
     margin-bottom: 0;
 
-    h1, h2, h3, h4,
-    .h1, .h2, .h3, .h4 {
+    h1,
+    h2,
+    h3,
+    h4,
+    .h1,
+    .h2,
+    .h3,
+    .h4 {
       margin-bottom: 0;
     }
   }
@@ -2380,7 +2839,7 @@ $socialIconFontStack: 'icons';
     top: 50%;
     right: $gutter / 2;
     font-size: 10px;
-    @include transform("translateY(-50%) rotate(-90deg)");
+    @include transform('translateY(-50%) rotate(-90deg)');
   }
   .site-nav__dropdown-grandchild & {
     white-space: normal;
@@ -2485,7 +2944,7 @@ $socialIconFontStack: 'icons';
   }
 
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     bottom: 0;
     left: $gutter / 2;
@@ -2618,7 +3077,6 @@ $socialIconFontStack: 'icons';
   }
 }
 
-
 /*================ View-specific styles ================*/
 /*================ Templates | Cart Page ================*/
 
@@ -2669,13 +3127,12 @@ $socialIconFontStack: 'icons';
 }
 
 .cart__row--table-with-discount {
-
   .grid__item {
     vertical-align: top;
   }
 }
 
-@include at-query ($min, $large) {
+@include at-query($min, $large) {
   .cart__row--table-large {
     display: table;
     table-layout: fixed;
@@ -2699,7 +3156,6 @@ $socialIconFontStack: 'icons';
 }
 
 .cart__pricing {
-
   @include at-query($max, $medium) {
     margin-top: $gutter;
   }
