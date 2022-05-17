@@ -94,13 +94,6 @@
         {% endif %}
       {% endfor %}
       <li class="mobile-nav__spacer bottom"></li>
-        {% if settings.social_instagram_link != blank %}
-        <li>
-          <a href="{{ settings.social_instagram_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Instagram' }}">
-            <span class="icon icon-instagram" aria-hidden="true"></span>
-          </a>
-        </li>
-      {% endif %}
       {% comment %}
         If customer accounts are enabled, provide login and create account links
       {% endcomment %}
@@ -116,6 +109,13 @@
             -%}
           </a>
       </li>
+      {% endif %}
+      {% if settings.social_instagram_link != blank %}
+        <li class="mobile-nav__item" >
+          <a href="{{ settings.social_instagram_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Instagram' }}">
+            <span class="icon icon-instagram" aria-hidden="true"></span>
+          </a>
+        </li>
       {% endif %}
       {% for link in linklists[section.settings.drawer_bottom_link_list].links %}
         <li class="mobile-nav__item mobile-nav__item--secondary"><a href="{{ link.url }}">{{ link.title }}</a></li>
