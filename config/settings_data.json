@@ -1,13 +1,13 @@
 {
   "current": {
-    "color_body_bg": "#f4e8d4",
+    "color_body_bg": "#F6EFE3",
     "color_headings": "#0f6b61",
     "color_body_text": "#0f6b61",
     "color_borders": "#0f6b61",
     "color_primary": "#ff6b53",
     "color_secondary": "#0f6b61",
     "color_sale_tag": "#0f6b61",
-    "color_newsletter": "#eed676",
+    "color_newsletter": "#f4e8d4",
     "color_drawer_background": "#eed676",
     "color_drawer_text": "#0f6b61",
     "color_drawer_border": "#0f6b61",
@@ -43,7 +43,7 @@
           "home_page_only": false,
           "text": "A SNEAK PEAK OF ALL NAUTURAL EYE DROPS",
           "link": "",
-          "color_bg": "#fdc4b5",
+          "color_bg": "#CAD9D9",
           "color_text": "#0f6b61"
         }
       },
