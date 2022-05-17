@@ -51,7 +51,7 @@ body#faq p {
   color: var(--gray) !important;
 }
 
-body#faq span {
+body#faq span:not(.icon) {
   color: var(--sky-blue) !important;
 }
 
@@ -78,7 +78,7 @@ body#faq span {
 }
 
 .icon-customer {
-  color: var(--green);
+  color: var(--green) !important;
 }
 
 .icon-cart {
