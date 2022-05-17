@@ -245,6 +245,7 @@
       },
       "1652769354c892b5d3": {
         "type": "multicolumn",
+        "disabled": true,
         "blocks": {
           "1652769354c892b5d3-0": {
             "type": "text_block",
@@ -293,6 +294,47 @@
           "text": "<p>Current standing medical director of Southwest Eye Institute, Ohio Valley Eye Institute, and Red Rock Surgery Center.<\/p><p><\/p><p>Published Physisican<\/p><p><\/p><p>Award Winning Surgeon<\/p><p><\/p><p>Active member of the American Academy of Ophthalmology<\/p><p><\/p><p>Active Member of the American Society of Cataract and Refractive Surgery<\/p>",
           "button_label": "",
           "button_link": ""
+        }
+      },
+      "multicolumn": {
+        "type": "multicolumn",
+        "blocks": {
+          "b7349270-9443-4853-bd20-74c2d32506b3": {
+            "type": "text_block",
+            "settings": {
+              "enable_image": true,
+              "image": "shopify:\/\/shop_images\/sunnie-website-healingeye-1.png",
+              "title": "Add a title or tagline",
+              "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>"
+            }
+          },
+          "5dd8ec22-c133-49e9-9b40-d843ae1918ce": {
+            "type": "text_block",
+            "settings": {
+              "enable_image": true,
+              "image": "shopify:\/\/shop_images\/sunnie-website-healingeye-2.png",
+              "title": "Add a title or tagline",
+              "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>"
+            }
+          },
+          "c7a8f085-4efd-4f5b-a101-024a1074200d": {
+            "type": "text_block",
+            "settings": {
+              "enable_image": true,
+              "image": "shopify:\/\/shop_images\/sunnie-website-healingeye-3_f2d575b4-5831-4bfa-b93f-74ba921f8346.png",
+              "title": "Add a title or tagline",
+              "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "b7349270-9443-4853-bd20-74c2d32506b3",
+          "5dd8ec22-c133-49e9-9b40-d843ae1918ce",
+          "c7a8f085-4efd-4f5b-a101-024a1074200d"
+        ],
+        "settings": {
+          "title": "",
+          "text_align": "center"
         }
       }
     },
