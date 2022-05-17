@@ -1,3 +1,17 @@
+/* Colors */
+:root {
+  --red: #e8b3a3;
+  --gold: #eec451;
+  --off-white: #fef8ec;
+  --khaki: #f6efe3
+  --gray: #575757;
+  --light-blue: #cad9d9;
+  --sky-blue: #74b9cf;
+  --brown: #d8c7aa;
+  --green: #106b61;
+  --purple: #cbb9d5;
+}
+
 html {
   margin: 0;
   padding: 0;
@@ -17,7 +31,7 @@ html {
   body#dry-eye,
   body#redness,
   body#digital-eye-strain {
-    height: 100vh !important;
+    min-height: 100vh !important;
     display: flex !important;
     flex-direction: column !important;
   }
@@ -136,10 +150,6 @@ button#Subscribe {
   background-color: #009ede;
   border-radius: 50%;
   display: inline-block;
-}
-
-#our-story {
-  height: 100vh;
 }
 
 #our-story p {
@@ -607,6 +617,19 @@ input#Quantity {
   font-family: 'Gotham Rounded';
 }
 
+.feature-row__image-wrapper {
+  margin-top: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .feature-row__image-wrapper {
+    margin-top: 0;
+  }
+  .feature-row__item h2 {
+    margin-top: 0 !important;
+  }
+}
+
 .feature-row__image {
   width: 400px;
   height: 400px;
@@ -618,6 +641,7 @@ input#Quantity {
   font-family: 'mondeurregular' !important;
   font-size: 32px;
   margin-bottom: 0;
+  margin-top: 150px !important;
   text-transform: capitalize !important;
   text-align: inherit !important;
 }
@@ -634,4 +658,13 @@ input#Quantity {
 
 .featured-row__subtext p {
   font-size: 20px !important;
+}
+
+#contact-us .grid {
+  margin: 0 !important;
+}
+
+#contact-us .btn.right {
+  margin-top: 20px;
+  background-color: var(--light-blue);
 }
