@@ -308,10 +308,22 @@ button#Subscribe {
     padding-left: 130px;
   }
   .product-single__meta--wrapper {
-    padding-left: 145px;
+    padding-left: 100px;
   }
   #slick-slide01 {
     margin-top: 60px;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .large--five-twelfths {
+    width: 33%;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .large--seven-twelfths {
+    width: 66%;
   }
 }
 
