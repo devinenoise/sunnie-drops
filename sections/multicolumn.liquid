@@ -1,6 +1,4 @@
 {{ 'section-multicolumn.css' | asset_url | stylesheet_tag }}
-{% comment %} <link rel="stylesheet" href="{{ 'component-slider.css' | asset_url }}" media="print" onload="this.media='all'">
-<noscript>{{ 'component-slider.css' | asset_url | stylesheet_tag }}</noscript> {% endcomment %}
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -15,14 +13,14 @@
     }
   }
 {%- endstyle -%}
-{% comment %} 
+
 {%- liquid
   assign columns_mobile_int = section.settings.columns_mobile | plus: 0
   assign show_mobile_slider = false
   if section.blocks.size > columns_mobile_int
     assign show_mobile_slider = true
   endif
--%} {% endcomment %}
+-%}
 
 <div class="multicolumn color-{{ section.settings.color_scheme }} gradient{% unless section.settings.background_style == 'none' and settings.text_boxes_border_thickness > 0 or settings.text_boxes_shadow_opacity > 0 %} background-{{ section.settings.background_style }}{% endunless %}{% if section.settings.title == blank %} no-heading{% endif %}">
   <div class="page-width section-{{ section.id }}-padding isolate">
@@ -36,7 +34,7 @@
         {%- endif -%}
       </div>
     {%- endunless -%}
-    {% comment %} <slider-component class="slider-mobile-gutter">
+    <slider-component class="slider-mobile-gutter">
       <ul class="multicolumn-list contains-content-container grid grid--{{ section.settings.columns_mobile }}-col-tablet-down grid--{{ section.settings.columns_desktop }}-col-desktop{% if show_mobile_slider %} slider slider--mobile grid--peek{% endif %}"
         id="Slider-{{ section.id }}"
         role="list"
@@ -113,7 +111,7 @@
           <button type="button" class="slider-button slider-button--next" name="next" aria-label="{{ 'general.slider.next_slide' | t }}">{% render 'icon-caret' %}</button>
         </div>
       {%- endif -%}
-    </slider-component> {% endcomment %}
+    </slider-component>
     <div class="center">
       {%- if section.settings.button_label != blank -%}
         <a class="button button--primary"{% if section.settings.button_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ section.settings.button_link }}"{% endif %}>
@@ -134,7 +132,7 @@
       "type": "text",
       "id": "title",
       "default": "Multicolumn",
-      "label": "Title"
+      "label": "Section Title"
     },
     {
       "type": "select",
@@ -223,7 +221,7 @@
         }
       ],
       "default": "left",
-      "label": "Column Alignment"
+      "label": "Column Text Alignment"
     },
     {
       "type": "select",
@@ -290,15 +288,15 @@
       "options": [
         {
           "value": "1",
-          "label": "1"
+          "label": "One"
         },
         {
           "value": "2",
-          "label": "2"
+          "label": "Two"
         }
       ],
       "default": "1",
-      "label": "1"
+      "label": "Columns On Mobile"
     },
     {
       "type": "header",
