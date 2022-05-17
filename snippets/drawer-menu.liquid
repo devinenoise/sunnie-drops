@@ -94,7 +94,13 @@
         {% endif %}
       {% endfor %}
       <li class="mobile-nav__spacer bottom"></li>
-
+        {% if settings.social_instagram_link != blank %}
+        <li>
+          <a href="{{ settings.social_instagram_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Instagram' }}">
+            <span class="icon icon-instagram" aria-hidden="true"></span>
+          </a>
+        </li>
+      {% endif %}
       {% comment %}
         If customer accounts are enabled, provide login and create account links
       {% endcomment %}

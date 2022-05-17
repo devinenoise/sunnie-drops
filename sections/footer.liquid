@@ -108,7 +108,7 @@
         </div>
       {% endif %}
 
-      {% if footer_social_enable %}
+      {% comment %} Hides social media from footer {% if footer_social_enable %}
         <div class="grid__item {{ footer_column_width }}">
             <ul class="no-bullets social-icons">
               {% if settings.social_facebook_link != blank %}
@@ -193,7 +193,7 @@
               {% endif %}
             </ul>
         </div>
-      {% endif %}
+      {% endif %} {% endcomment %}
 
       {%- liquid
         assign selectors_form_class = "selectors-form"

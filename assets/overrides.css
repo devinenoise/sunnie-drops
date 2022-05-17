@@ -142,7 +142,8 @@ button#Subscribe {
   #account .site-footer,
   #our-medical-ambassadors .site-footer,
   #our-story .site-footer,
-  #faq .site-footer {
+  #faq .site-footer,
+  #the-healing-process .site-footer {
     bottom: 0;
   }
 }
