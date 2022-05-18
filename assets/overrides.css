@@ -31,6 +31,7 @@ html {
   body#our-story,
   body#dry-eye,
   body#redness,
+  body#the-healing-process,
   body#digital-eye-strain {
     min-height: 100vh !important;
     display: flex !important;
